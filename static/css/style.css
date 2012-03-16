@@ -131,6 +131,13 @@ a {
 
 .dialog-left .social-entry {
 	height: 64px;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .dialog-left .social-entry .social-icon {
@@ -154,10 +161,10 @@ a {
 	min-height: 340px;
 }
 
-.hand-text
-{
+.hand-text {
 	font-family:Hand,serif;
 	font-size: 30px;	
+}
 
 .more-info {
 	font-size: 0.8em;

@@ -154,11 +154,10 @@ a {
 	min-height: 340px;
 }
 
-.hand-text
-{
+.hand-text {
 	font-family:Hand,serif;
 	font-size: 30px;	
-
+}
 .more-info {
 	font-size: 0.8em;
 }

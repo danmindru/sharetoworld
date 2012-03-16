@@ -153,12 +153,11 @@ a {
 .well {
 	min-height: 340px;
 }
-<<<<<<< HEAD
+
 .hand-text
 {
 	font-family:Hand,serif;
 	font-size: 30px;	
-=======
 
 .more-info {
 	font-size: 0.8em;
@@ -172,5 +171,4 @@ a {
 .more-info > a.more-info-a:hover {
 	color: #19597a;
 	text-decoration: none;
->>>>>>> 05a1bd308ee8c533605983a7853375b14597c52f
 }

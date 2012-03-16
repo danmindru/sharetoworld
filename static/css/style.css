@@ -1,5 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Terminal+Dosis:700);
 
+@font-face {
+    font-family: 'Hand';
+    src: url('../fonts/handwriting_font_by_shaketheskyy-webfont.eot');
+    src: url('../fonts/handwriting_font_by_shaketheskyy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/handwriting_font_by_shaketheskyy-webfont.woff') format('woff'),
+         url('../fonts/handwriting_font_by_shaketheskyy-webfont.ttf') format('truetype'),
+         url('../fonts/handwriting_font_by_shaketheskyy-webfont.svg#ChristinesfontRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	background: #F5F5F5;
 }
@@ -130,4 +142,9 @@ a {
 
 .well {
 	min-height: 340px;
+}
+.hand-text
+{
+	font-family:Hand,serif;
+	font-size: 30px;	
 }

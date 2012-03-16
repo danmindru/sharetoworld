@@ -85,6 +85,12 @@
 			<div class="hero-unit">
 				<h1>Share To World!</h1>
 				<p>Share To World - Connect All People via Social Networks : share, world, social, facebook, twitter, digg, like, follow</p>
+                
+                <div id="graphic">
+                	<h2 class="hand-text">Testing Font</h2>
+                
+                </div>
+                
 			</div>
 		</div> 
 	</div>

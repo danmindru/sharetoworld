@@ -1,12 +1,12 @@
 <?php
-define('ROOT_DIR', 'D:\Projects\Sites\Share To World GitHUB\\');
+define('ROOT_DIR', 'D:\Share To World GitHUB\\');
 define('DATA_DIR', ROOT_DIR . 'data/');
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');
 define('DB_NAME', 'share_to_world');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'maimutoi');
 define('DB_KEEP_ALIVE', false);
 define('URL_HOST', 'localhost');
 define('URL_PREFIX', '/stw/');

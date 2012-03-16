@@ -1,5 +1,5 @@
 <?php
-define('ROOT_DIR', 'D:\Projects\Sites\Share To World GitHUB\\');
+define('ROOT_DIR', 'D:\Projects\Social Media\Share To World\\');
 define('DATA_DIR', ROOT_DIR . 'data/');
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');

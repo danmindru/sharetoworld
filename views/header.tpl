@@ -12,61 +12,19 @@
 		<script type="text/javascript" src="{$URL_STATIC}js/jquery.js"></script>
 		<script type="text/javascript" src="{$URL_STATIC}js/jquery-ui-1.8.18.custom.min.js"></script>
 		<script type="text/javascript" src="{$URL_STATIC}js/bootstrap.js"></script>
-		<script type="text/javascript">
-		{literal}
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-29749551-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-			// increase the default animation speed to exaggerate the effect
-			$.fx.speeds._default = 1000;
-			$(function() {
-				
-				$( "#dialog" ).dialog({
-					autoOpen: false,
-					draggable: false,
-					resizable: false,
-					position: ['center', 50],
-					show: "blind",
-					hide: "puff"
-				});
-
-				$( "#opener" ).click(function() {
-					$( "#dialog" ).dialog( "open" );
-					return false;
-				});
-
-				$( "#slider-points-per-click" ).slider({
-					range: "min",
-					value: 2,
-					min: 1,
-					max: 10,
-					slide: function( event, ui ) {
-						$( "#point-per-click" ).text( ui.value );
-						$( "#required-points" ).text( ui.value * $( "#slider-clicks" ).slider( "value" ) );
-					}
-				});
-				$( "#point-per-click" ).text( $( "#slider-points-per-click" ).slider( "value" ) );
-
-				$( "#slider-clicks" ).slider({
-					range: "min",
-					value: 1,
-					min: 10,
-					max: 100,
-					slide: function( event, ui ) {
-						$( "#total-clicks" ).text( ui.value );		
-						$( "#required-points" ).text( ui.value * $( "#slider-points-per-click" ).slider( "value" ) );
-					}
-				});
-				$( "#total-clicks" ).text( $( "#slider-clicks" ).slider( "value" ) );
-				$( "#required-points" ).text( $( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" ) );				
-			});
-		{/literal}
+		<script type="text/javascript" src="{$URL_STATIC}js/script.js"></script>
+		<script>
+			{literal}
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-29749551-1']);
+				_gaq.push(['_trackPageview']);
+			
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+		  	{/literal}
 		</script>
 	</head>
 	<body>

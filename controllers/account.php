@@ -128,27 +128,32 @@ class account implements IController {
 			try {
 				//Check if all fields are filled
 				if (exist_empty_fields($_POST)) {
-					throw new Exception('All fields are required.');
+					flash_warning('All fields are required.');
+					redirect();
 				}
 				
 				//Check if password entered matches
 				if ($_POST['password'] != $_POST['passwordagain']) {
-					throw new Exception('Passwords does not match.');
+					flash_error('Passwords does not match.');
+					redirect();
 				}
 				
 				//Check if email address is valid
 				if (!is_valid_email($_POST['email'])) {
-					throw new Exception('Email address is invalid.');
+					flash_error('Email address is invalid.');
+					redirect();
 				}
 				
 				//Check if username already exist
 				if (dbUsers::exists($_POST['user_name'])) {
-					throw new Exception('Username is already registered.');
+					flash_error('Username is already registered.');
+					redirect();					
 				}
 			
 				//Check if email already exist
 				if (!is_null(dbUsers::get_by_email($_POST['email']))) {
-					throw new Exception('Email address is already used by another account');
+					flash_warning('Email address is already used by another account');
+					redirect();			
 				}
 			
 				//Create account
@@ -171,15 +176,8 @@ class account implements IController {
 			} catch (Exception $e) {
 				//Flash error message if an error eccured
 				flash_error($e->getMessage());
-				redirect('account/create/');
+				redirect();
 			}
-		} else {
-			//Display form
-			$front = FrontController::get_instance();
-			$view  = new View();
-			
-			$result = $view->fetch('account/register.tpl');
-			$front->setBody($result);
 		}
 	}
 	

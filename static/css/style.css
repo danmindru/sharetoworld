@@ -16,6 +16,11 @@ body {
 	background: #F5F5F5;
 }
 
+a {
+	color: #FFF;
+}
+
+
 .navbar {
 	margin-bottom: 2px;
 }
@@ -35,6 +40,45 @@ body {
 	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:0 0px 0px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav > li > a, .navbar .dropdown-menu a {
+    color: #FFF;
+}
+
+.navbar .nav .active > a {
+	background: #F5F5F5;
+	color: #0E51A7;
+  	text-decoration: none;
+  	text-shadow: 0 -1px 0 rgba(0, 0, 0.1);
+}
+
+.navbar .nav .active > a:hover {
+	background: #287399;
+}
+
+.navbar .nav > li > a:hover {
+	background: #287399;
+}
+
+.navbar .navbar-text {
+	color: #FFF;	
+}
+
+.navbar-buttons {
+	float: right;
+}
+
+.no-border-radius {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	margin-bottom: -5px;
+}
+
+.logo {
+ margin-top:-6px;
+ margin-bottom:-7px;
 }
 
 .hero-unit {
@@ -73,40 +117,6 @@ body {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.logo
-{
- margin-top:-6px;
- margin-bottom:-7px;
-}
-
-.navbar .nav > li > a, .navbar .dropdown-menu a {
-    color: #FFF;
-}
-
-.navbar .nav .active > a {
-	background: #F5F5F5;
-	color: #0E51A7;
-  	text-decoration: none;
-  	text-shadow: 0 -1px 0 rgba(0, 0, 0.1);
-}
-
-.navbar .nav .active > a:hover {
-	background: #287399;
-}
-
-.navbar .nav > li > a:hover {
-	background: #287399;
-}
-
-.navbar .navbar-text {
-	color: #FFF;	
-}
-
-a {
-	color: #FFF;
-	text-decoration: underline;
-}
-
 .dialog-container {
 	width: 800px;
 	margin-left: -15px;
@@ -143,8 +153,24 @@ a {
 .well {
 	min-height: 340px;
 }
+<<<<<<< HEAD
 .hand-text
 {
 	font-family:Hand,serif;
 	font-size: 30px;	
+=======
+
+.more-info {
+	font-size: 0.8em;
+}
+
+.more-info > a.more-info-a {
+	color: #287399;
+	text-decoration: underline;
+}
+
+.more-info > a.more-info-a:hover {
+	color: #19597a;
+	text-decoration: none;
+>>>>>>> 05a1bd308ee8c533605983a7853375b14597c52f
 }

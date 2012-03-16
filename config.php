@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 define('ROOT_DIR', 'D:\Share To World GitHUB\\');
+=======
+define('ROOT_DIR', 'D:\Projects\Social Media\Share To World\\');
+>>>>>>> 05a1bd308ee8c533605983a7853375b14597c52f
 define('DATA_DIR', ROOT_DIR . 'data/');
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');

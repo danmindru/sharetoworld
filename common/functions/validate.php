@@ -33,7 +33,7 @@ function exist_empty_fields ($data) {
 }
 
 /**
- * Check if eemail address is valid
+ * Check if email address is valid
  * 
  * @param $email
  * @return bool

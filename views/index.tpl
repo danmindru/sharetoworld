@@ -12,7 +12,11 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#" id="opener">Add New Page +</a></li>
+					{if !$user.is_loggedin}
+						<li><a href="#" id="login-from-addpage">Add New Page +</a></li>
+					{else}
+						<li><a href="#" id="opener">Add New Page +</a></li>
+					{/if}
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>

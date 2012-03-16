@@ -21,6 +21,7 @@ jQuery(document).ready(function($) {
 		$( "#opener" ).click(function() {
 			$( "#dialog" ).dialog( "open" );
 			return false;
+
 		});
 		
 	/* Register Page 
@@ -61,6 +62,11 @@ jQuery(document).ready(function($) {
 	});
 
 	$( "#login" ).click(function() {
+		$( "#login-form" ).dialog( "open" );
+		return false;
+	});
+	
+	$( "#login-from-addpage" ).click(function() {
 		$( "#login-form" ).dialog( "open" );
 		return false;
 	});

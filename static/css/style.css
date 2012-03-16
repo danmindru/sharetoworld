@@ -1,0 +1,133 @@
+@import url(http://fonts.googleapis.com/css?family=Terminal+Dosis:700);
+
+body {
+	background: #F5F5F5;
+}
+
+.navbar {
+	margin-bottom: 2px;
+}
+
+.navbar-inner {
+	background-image: -moz-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: -ms-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#47A2DA), to(#2D80AA));
+	background-image: -webkit-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: -o-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: linear-gradient(top, #47A2DA, #2D80AA);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#47A2DA', endColorstr='#2D80AA', GradientType=0);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:0 0px 0px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hero-unit {
+	margin-bottom: 0px;
+}
+
+.footer-background {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+ 	height:auto;
+	text-align: center;
+	background:none;
+}
+
+.footer1
+{
+ 	padding-bottom: 4px;
+  	height:auto;
+  	color: #F5F5F5;
+	background-color: #2c2c2c;
+	background-image: -moz-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: -ms-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#47A2DA), to(#2D80AA));
+	background-image: -webkit-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: -o-linear-gradient(top, #47A2DA, #2D80AA);
+	background-image: linear-gradient(top, #47A2DA, #2D80AA);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#47A2DA', endColorstr='#2D80AA', GradientType=0);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo
+{
+ margin-top:-6px;
+ margin-bottom:-7px;
+}
+
+.navbar .nav > li > a, .navbar .dropdown-menu a {
+    color: #FFF;
+}
+
+.navbar .nav .active > a {
+	background: #F5F5F5;
+	color: #0E51A7;
+  	text-decoration: none;
+  	text-shadow: 0 -1px 0 rgba(0, 0, 0.1);
+}
+
+.navbar .nav .active > a:hover {
+	background: #287399;
+}
+
+.navbar .nav > li > a:hover {
+	background: #287399;
+}
+
+.navbar .navbar-text {
+	color: #FFF;	
+}
+
+a {
+	color: #FFF;
+	text-decoration: underline;
+}
+
+.dialog-container {
+	width: 800px;
+	margin-left: -15px;
+	min-height: 400px;
+}
+
+.dialog-left {
+	float: left;
+	width: 235px;
+	padding-left: 15px;
+}
+
+.dialog-left .social-entry {
+	height: 64px;
+}
+
+.dialog-left .social-entry .social-icon {
+	float: left;
+}
+
+.dialog-left .social-entry .social-title {
+	float: left;
+	font-size: 1.6em;
+	margin-top: 18px;
+	color: #1f6081;
+	font-family: 'Terminal Dosis', sans-serif;
+}
+
+.dialog-right {
+	float: left;
+	width: 550px;	
+}
+
+.well {
+	min-height: 340px;
+}

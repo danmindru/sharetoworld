@@ -12,6 +12,18 @@
 
 }
 
+@font-face {
+    font-family: 'Pro';
+    src: url('../fonts/myriadpro-regular_0-webfont.eot');
+    src: url('../fonts/myriadpro-regular_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/myriadpro-regular_0-webfont.woff') format('woff'),
+         url('../fonts/myriadpro-regular_0-webfont.ttf') format('truetype'),
+         url('../fonts/myriadpro-regular_0-webfont.svg#MyriadProRegular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
 body {
 	background: #F5F5F5;
 }
@@ -146,10 +158,10 @@ a {
 
 .dialog-left .social-entry .social-title {
 	float: left;
-	font-size: 1.6em;
-	margin-top: 18px;
+	font-size: 1.2em;
+	margin-top: 20px;
 	color: #1f6081;
-	font-family: 'Terminal Dosis', sans-serif;
+	font-family: 'Pro', sans-serif;
 }
 
 .dialog-right {
@@ -178,4 +190,37 @@ a {
 .more-info > a.more-info-a:hover {
 	color: #19597a;
 	text-decoration: none;
+}
+#arrow-default-add-page{
+	margin-top:50px;
+	margin-left:-15px;
+	position:absolute;
+}
+h4{
+	font-family: 'Pro', serif;
+	font-size:1.7em;
+	color:#000;
+	margin-top:120px;
+	margin-left:150px;
+}
+.well .pro-text{
+	font-family:'Pro',serif;
+	margin-left:124px;
+	margin-top:7px;
+}
+
+.well .pro-text-bottom{
+	font-family:'Pro',serif;
+	margin-left:74px;
+	margin-top:2px;
+}
+.well .point-count{
+	font-family: "Pro", sans-serif;
+	font-size:1.5em;
+	margin-top:125px;
+	margin-left:160px;
+}
+.credits{
+	color:#333333;
+	font-size:1.6em;
 }

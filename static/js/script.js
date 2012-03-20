@@ -123,7 +123,8 @@ jQuery(document).ready(function($) {
 		$( ".social-form" ).hide();
 		
 		$( ".social-entry" ).click(function () {
-			
+			//added by Dan M - hide the default form after clicking a button
+			$( ".social-form-default" ).hide();
 			//Get ID from 'rel' attribute 	
 			id = $( this ).attr("rel");
 			

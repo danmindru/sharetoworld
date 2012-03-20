@@ -41,40 +41,50 @@
 				<div class="social-icon">
 					<img src="{$URL_STATIC}img/64x64/facebook.png" />
 				</div>
-				<div class="social-title">FACEBOOK</div>
+				<div class="social-title">Facebook</div>
 			</div>
 			<div class="social-entry" rel="social-twitter-form">
 				<div class="social-icon">
 					<img src="{$URL_STATIC}img/64x64/twitter.png" />
 				</div>
-				<div class="social-title">TWITTER</div>
+				<div class="social-title">Twitter</div>
 			</div>
 			<div class="social-entry" rel="social-google-form">
 				<div class="social-icon">
 					<img src="{$URL_STATIC}img/64x64/google.png" />
 				</div>
-				<div class="social-title">GOOGLE PLUS</div>
+				<div class="social-title">Google Plus</div>
 			</div>
 			<div class="social-entry" rel="social-linkedin-form">
 				<div class="social-icon">
 					<img src="{$URL_STATIC}img/64x64/linkedin.png" />
 				</div>
-				<div class="social-title">LINKEDIN</div>
+				<div class="social-title">LinkedIn</div>
 			</div>
 			<div class="social-entry" rel="social-digg-form">
 				<div class="social-icon">
 					<img src="{$URL_STATIC}img/64x64/digg.png" />
 				</div>
-				<div class="social-title">DIGG</div>
+				<div class="social-title">Digg</div>
 			</div>
 			<div class="social-entry" rel="social-stumbleupon-form">
 				<div class="social-icon">
 					<img src="{$URL_STATIC}img/64x64/stumbleupon.png" />
 				</div>
-				<div class="social-title">STUMBLEUPON</div>
+				<div class="social-title">StumbleUpon</div>
 			</div>
 		</div>
 		<div class="dialog-right">
+			<div class="social-form-default">
+				<form class="well">
+					<img id="arrow-default-add-page" src="{$URL_STATIC}img/arrow-default-add-page.png" alt="Choose Social Networks"/>
+					<h4>Add Your Social Pages</h4>
+					<p class="pro-text">Distribute points in order to get clicks on your links.</p>
+					<p class="point-count">You have: <span class="credits">20 Credits</span></p>
+					<p class="pro-text-bottom">Like, +1, Share, Stumble, Pin, Digg or Tweet other pages to get more points</p>
+				</form>
+			</div>
+			
 			<div class="social-form" id="social-facebook-form">
 				<form class="well">
 					<label>Your URL</label>

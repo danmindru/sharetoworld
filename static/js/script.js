@@ -93,12 +93,12 @@ jQuery(document).ready(function($) {
 				$( "#required-points" ).text( ui.value * $( "#slider-clicks" ).slider( "value" ) );
 				$( "#facebook_points_per_click" ).val( ui.value );
 				
-				if( (ui.value * $( "#slider-clicks" ).slider( "value" )) > 20) {
+				if( (ui.value * $( "#slider-clicks" ).slider( "value" )) > userCredits) {
 					$( "#btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");
 					creditsClass = true;
 						
 				}
-				if( ((ui.value * $( "#slider-clicks" ).slider( "value" )) <= 20) && creditsClass == true) {
+				if( ((ui.value * $( "#slider-clicks" ).slider( "value" )) <= userCredits) && creditsClass == true) {
 					$( "#btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");	
 					creditsClass = false;
 				}
@@ -120,11 +120,11 @@ jQuery(document).ready(function($) {
 				$( "#required-points" ).text( ui.value * $( "#slider-points-per-click" ).slider( "value" ) );
 				$( "#facebook_clicks" ).val( ui.value );
 				
-				if( (ui.value * $( "#slider-points-per-click" ).slider( "value" )) > 20) {
+				if( (ui.value * $( "#slider-points-per-click" ).slider( "value" )) > userCredits) {
 					$( "#btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");
 					creditsClass = true;	
 				}
-				if( ((ui.value * $( "#slider-points-per-click" ).slider( "value" )) <= 20)  && creditsClass == true) {
+				if( ((ui.value * $( "#slider-points-per-click" ).slider( "value" )) <= userCredits)  && creditsClass == true) {
 					$( "#btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");	
 					creditsClass = false;
 				}
@@ -134,11 +134,11 @@ jQuery(document).ready(function($) {
 		$( "#required-points" ).text( $( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" ) );
 		$( "#facebook_clicks" ).val( $( "#slider-clicks" ).slider( "value" ) );
 		
-		if( ($( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" )) > 20) {
+		if( ($( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" )) > userCredits) {
 			$( "#btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");	
 			creditsClass = true;
 		}
-		if( (($( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" )) <= 20) && creditsClass == true) {
+		if( (($( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" )) <= userCredits) && creditsClass == true) {
 			$( "#btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");
 			creditsClass = false;	
 		}

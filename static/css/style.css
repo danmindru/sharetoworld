@@ -224,3 +224,81 @@ h4{
 	color:#333333;
 	font-size:1.6em;
 }
+#arrow-add{
+	position:absolute;
+	left:180px;
+	top:50px;
+}
+#arrow-sign{
+	position:absolute;
+	right:150px;
+	top:50px;
+}
+#home-title-one{
+	position:absolute;
+	left:-10px;
+	top:20px;
+}
+#home-title-two{
+	position:absolute;
+	right:150px;
+	top:20px;
+}
+
+#graphic{
+	min-height:400px;
+}
+
+#graphic .pro-text-home{
+	font-family:'Pro',serif;
+	margin-left:124px;
+	font-size:1.1em;
+	color:#000;
+}
+.text-one{
+	position:absolute;
+	top:160px;
+	left:-42px;
+}
+.text-two{
+	position:absolute;
+	top:176px;
+	left:5px;
+}
+.text-three{
+	position:absolute;
+	top:160px;
+	right:128px;
+}
+.text-four{
+	position:absolute;
+	top:176px;
+	right:127px;
+}
+#counter-hold{
+	width:435px;
+	height:60px;
+	margin:0px auto;
+	padding-top:70px;
+}
+.counter-text{
+	font-family:'Pro',serif;
+	font-size:1.1em;
+	color:#000;
+	margin-left:80px;
+}
+
+.hero-unit p {
+	font-size:1.1em;
+}
+#par-three{
+	position:absolute;
+	top:200px;
+	width:390px;
+	left:1px;
+}
+
+// media queries - later
+@media only screen and (max-width: 480px){
+	
+}

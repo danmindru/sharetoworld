@@ -74,6 +74,7 @@
 				<div class="social-title">StumbleUpon</div>
 			</div>
 		</div>
+		<!-- default right dialog for add new page -->
 		<div class="dialog-right">
 			<div class="social-form-default">
 				<form class="well">
@@ -173,13 +174,59 @@
 						<a class="btn btn-info" href="#">{$flash.message}</a> 
 					{/if}
 				{/if}
-				<h1>Share To World!</h1>
+				<!-- <h1>Share To World!</h1>
 				<p>Share To World - Connect All People via Social Networks : share, world, social, facebook, twitter, digg, like, follow</p>
-                
-                <div id="graphic">
-                	<h2 class="hand-text">Testing Font</h2>
-                
-                </div>
+               -->
+               <div id="graphic">
+   				   
+   				   <div id="par-one">
+		               <img id="arrow-add" src="{$URL_STATIC}img/arrow-add-new-page.png" alt="Add a new social page"/>
+		               
+		               <h4 id="home-title-one">Add Your Social Page</h4>
+		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
+		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
+	               </div>
+	               
+	               <!-- begin counter -->
+	               <div id="counter-hold" >
+	               		<img src="{$URL_STATIC}img/counter-hold.png" alt="Add a new social page"/>
+	               		<p class="counter-text">Users are increasing their audience each minute.</p>
+	               </div>
+	               <!-- end counter -->
+	               
+	               <div id="par-two">
+		               <img id="arrow-sign" src="{$URL_STATIC}img/arrow-sign-up.png" alt="Add a new social page"/>
+		               
+		               <h4 id="home-title-two">Sign Up - It's Free!</h4>
+	                   <p class="pro-text-home text-three">Have instant access to a audience </p>
+	                   <p class="pro-text-home text-four">you have never dreamed before.</p>
+	                	<!-- <h2 class="hand-text">Testing Font</h2> -->
+	              </div>
+                	<br/><br/><br/><br/><br/>
+                	<hr/>
+                	
+             	  <div id="par-three">
+		               
+		               <h4 id="home-title-one">What you get?</h4>
+		               <p class="pro-text-home text-five">You can add pages from facebook, twitter, google,</p>
+		               <p class="pro-text-home text-six">stumbleupon, pinterest and digg.</p>
+	               </div>
+	               
+	               <div id="par-four">
+		               
+		               <h4 id="home-title-one">Add Your Social Page</h4>
+		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
+		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
+	               </div>
+                	
+                   <div id="par-five">
+		               
+		               <h4 id="home-title-one">Add Your Social Page</h4>
+		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
+		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
+	               </div>
+	               
+               </div>
                 
 			</div>
 		</div> 

@@ -1,0 +1,1 @@
+- click on buttons in add page close the window

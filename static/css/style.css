@@ -227,22 +227,22 @@ h4{
 #arrow-add{
 	position:absolute;
 	left:180px;
-	top:50px;
+	top:90px;
 }
 #arrow-sign{
 	position:absolute;
 	right:150px;
-	top:50px;
+	top:90px;
 }
 #home-title-one{
 	position:absolute;
 	left:-10px;
-	top:20px;
+	top:60px;
 }
 #home-title-two{
 	position:absolute;
 	right:150px;
-	top:20px;
+	top:60px;
 }
 
 #graphic{
@@ -257,24 +257,25 @@ h4{
 }
 .text-one{
 	position:absolute;
-	top:160px;
+	top:206px;
 	left:-42px;
 }
 .text-two{
 	position:absolute;
-	top:176px;
+	top:220px;
 	left:5px;
 }
 .text-three{
 	position:absolute;
-	top:160px;
+	top:206px;
 	right:128px;
 }
 .text-four{
 	position:absolute;
-	top:176px;
+	top:220px;
 	right:127px;
 }
+
 #counter-hold{
 	width:435px;
 	height:60px;
@@ -292,10 +293,18 @@ h4{
 	font-size:1.1em;
 }
 #par-three{
-	position:absolute;
-	top:200px;
-	width:390px;
-	left:1px;
+	min-height:100px;
+	background:#000000;
+}
+
+#par-four{
+	min-height:100px;
+	background:#000000;
+}
+
+#par-five{
+	min-height:100px;
+	background:#000000;
 }
 
 // media queries - later

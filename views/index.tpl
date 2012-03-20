@@ -210,27 +210,20 @@
                 	<br/><br/><br/><br/><br/>
                 	<hr/>
                 	
-             	  <div id="par-three">
+                  <div class="row-fluid">
+	             	   <div class="span4" id="par-three">
+			               
+			             
+		               </div>
 		               
-		               <h4 id="home-title-one">What you get?</h4>
-		               <p class="pro-text-home text-five">You can add pages from facebook, twitter, google,</p>
-		               <p class="pro-text-home text-six">stumbleupon, pinterest and digg.</p>
+		               <div class="span4" id="par-four">
+			               
+			               
+		               </div>
+	                	
+	                   <div class="span4" id="par-five">   
+		        </div>
 	               </div>
-	               
-	               <div id="par-four">
-		               
-		               <h4 id="home-title-one">Add Your Social Page</h4>
-		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
-		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
-	               </div>
-                	
-                   <div id="par-five">
-		               
-		               <h4 id="home-title-one">Add Your Social Page</h4>
-		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
-		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
-	               </div>
-	               
                </div>
                 
 			</div>

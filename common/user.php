@@ -69,6 +69,7 @@ class User implements ArrayAccess {
 			//get user by id
 			$info 					= dbUsers::get_by_id($user['id']);
 			$user['user_name'] 		= $info['user_name'];
+			$user['user_credits'] 	= $info['user_credits'];
 			
 			if($info['user_type'] == 'administrator') {
 				$user['is_admin'] = true;	
@@ -131,6 +132,15 @@ class User implements ArrayAccess {
      */
 	public function get_user_id () {
     	return $this->_user['id'];
+    }
+
+	/**
+     * Return user credits
+     * 
+     * @return int
+     */
+	public function get_user_credits () {
+    	return $this->_user['user_credits'];
     }
    
   

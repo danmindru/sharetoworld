@@ -77,6 +77,9 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 	
+	//Keep track of button classes (Total Credits)
+	var creditsClass = false;
+	
 	/* Points Per Click Slider
 	 * - give user permssion to choose a certain amount of points per click
 	 */
@@ -88,9 +91,21 @@ jQuery(document).ready(function($) {
 			slide: function( event, ui ) {
 				$( "#point-per-click" ).text( ui.value );
 				$( "#required-points" ).text( ui.value * $( "#slider-clicks" ).slider( "value" ) );
+				$( "#facebook_points_per_click" ).val( ui.value );
+				
+				if( (ui.value * $( "#slider-clicks" ).slider( "value" )) > 20) {
+					$( "#btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");
+					creditsClass = true;
+						
+				}
+				if( ((ui.value * $( "#slider-clicks" ).slider( "value" )) <= 20) && creditsClass == true) {
+					$( "#btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");	
+					creditsClass = false;
+				}
 			}
 		});
 		$( "#point-per-click" ).text( $( "#slider-points-per-click" ).slider( "value" ) );
+		$( "#facebook_points_per_click" ).val( $( "#slider-points-per-click" ).slider( "value" ) );
 	
 	/* Clicks Slider
 	 * - give user permssion to choose total number of clicks
@@ -103,11 +118,30 @@ jQuery(document).ready(function($) {
 			slide: function( event, ui ) {
 				$( "#total-clicks" ).text( ui.value );		
 				$( "#required-points" ).text( ui.value * $( "#slider-points-per-click" ).slider( "value" ) );
+				$( "#facebook_clicks" ).val( ui.value );
+				
+				if( (ui.value * $( "#slider-points-per-click" ).slider( "value" )) > 20) {
+					$( "#btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");
+					creditsClass = true;	
+				}
+				if( ((ui.value * $( "#slider-points-per-click" ).slider( "value" )) <= 20)  && creditsClass == true) {
+					$( "#btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");	
+					creditsClass = false;
+				}
 			}
 		});
 		$( "#total-clicks" ).text( $( "#slider-clicks" ).slider( "value" ) );
 		$( "#required-points" ).text( $( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" ) );
+		$( "#facebook_clicks" ).val( $( "#slider-clicks" ).slider( "value" ) );
 		
+		if( ($( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" )) > 20) {
+			$( "#btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");	
+			creditsClass = true;
+		}
+		if( (($( "#slider-clicks" ).slider( "value" ) * $( "#slider-points-per-click" ).slider( "value" )) <= 20) && creditsClass == true) {
+			$( "#btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");
+			creditsClass = false;	
+		}
 		
 		/**
 		 * Social Forms

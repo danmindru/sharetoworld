@@ -16,15 +16,16 @@
 						<li><a href="#" id="login-from-addpage">Add New Page +</a></li>
 					{else}
 						<li><a href="#" id="opener">Add New Page +</a></li>
+						<li><a href="#">Your Networks</a></li>
+						<li><a href="#">Control Panel</a></li>
 					{/if}
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
 				</ul>
 				
 				<p class="navbar-buttons">
 					{if !$user.is_loggedin}
 						<a href="#" class="btn no-border-radius" id="login">Login</a>&nbsp;<a href="#" class="btn btn-inverse no-border-radius" id="register">Register</a>
 					{else}
+						<a href="#" class="btn btn-success no-border-radius">{$user.user_credits|number_format} Credits</a>
 						<a href="{$URL}account/logout/" class="btn no-border-radius">Logout [{$user.user_name}]</a>
 					{/if}
 				</p>
@@ -80,21 +81,25 @@
 					<img id="arrow-default-add-page" src="{$URL_STATIC}img/arrow-default-add-page.png" alt="Choose Social Networks"/>
 					<h4>Add Your Social Pages</h4>
 					<p class="pro-text">Distribute points in order to get clicks on your links.</p>
-					<p class="point-count">You have: <span class="credits">20 Credits</span></p>
-					<p class="pro-text-bottom">Like, +1, Share, Stumble, Pin, Digg or Tweet other pages to get more points</p>
+					<p class="point-count">You have: <span class="credits">{$user.user_credits|number_format} Credits</span></p>
+					<p class="pro-text-bottom">Like, +1, Share, Stumble, Pin, Digg or Tweet other pages to get more Credits</p>
 				</form>
 			</div>
 			
 			<div class="social-form" id="social-facebook-form">
-				<form class="well">
+				<form class="well" action="{$URL}cpanel/addFacebook/" method="POST">
 					<label>Your URL</label>
-					<input type="text" class="span3" placeholder="Type your Facebook Page URL">
+					<input type="text" class="span3" placeholder="Type your Facebook Page URL" name="facebook_url" />
 					<span class="help-inline">https://www.facebook.com/YourURL</span>
-					<label>How many clicks would you like to get?&emsp;&emsp;&emsp;Clicks: <span id="total-clicks"></span></label>
+					<label>How many clicks would you like to get?
+					<a href="" class="btn btn-info" style="margin-left: 140px; margin-bottom: 10px; color: #FFF;">Clicks: <span id="total-clicks"></span></a>
 					<div id="slider-clicks"></div><br />
-					<label>Points per click: <span id="point-per-click"></span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;You need: <span id="required-points"></span> points</label>
-					<div id="slider-points-per-click"></div><br />
-					<button type="submit" class="btn">Submit</button>
+					<label>How many credits per click?</label>
+					<div id="slider-points-per-click"></div>
+					<hr />
+					<input type="hidden" id="facebook_clicks" name="facebook_clicks" value="" />
+					<input type="hidden" id="facebook_points_per_click" name="facebook_points_per_click" value="" />
+					<label><a href="" class="btn btn-info no-border-radius" style="margin-left: 10px; margin-bottom: 10px; color: #FFF">Credits per click: <span id="point-per-click"></span></a><a href="" id="btn-required-pronts"class="btn btn-success no-border-radius" style="margin-bottom: 10px; color: #FFF">You need: <span id="required-points"></span></a><a href="" class="btn btn-info no-border-radius" style="margin-bottom: 10px; color: #FFF">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button></label>
 				</form>
 			</div>
 			<div class="social-form" id="social-twitter-form">

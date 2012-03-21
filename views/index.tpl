@@ -80,7 +80,7 @@
 			<div class="social-form-default">
 				<form class="well">
 					<img id="arrow-default-add-page" src="{$URL_STATIC}img/arrow-default-add-page.png" alt="Choose Social Networks"/>
-					<h4 class="default-add-page-title">Add Your Social Pages</h4>
+					<h4 class="default-add-page-title">Add a New Social Page</h4>
 					<p class="pro-text">Distribute points in order to get clicks on your links.</p>
 					<p class="point-count">You have: <span class="credits">{$user.user_credits|number_format} Credits</span></p>
 					<p class="pro-text-bottom">Like, +1, Share, Stumble, Pin, Digg or Tweet other pages to get more Credits</p>

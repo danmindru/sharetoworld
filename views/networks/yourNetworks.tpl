@@ -1,5 +1,37 @@
 {include file="header.tpl"}
 
+<div id="fb-root"></div>
+<script>
+{literal}
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId  : '117660814934034',
+      status : true, // check login status
+      cookie : true, // enable cookies to allow the server to access the session
+      xfbml  : true  // parse XFBML
+    });
+    
+	FB.Event.subscribe('edge.create', function(href, widget) {
+		$('[data-href="' + href + '"]').remove();
+		$.get("{/literal}{$URL}networks/index/{literal}", { url: href } );
+    }
+);
+};
+
+  // Load the SDK Asynchronously
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+   
+{/literal}
+</script>
+
+
+
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container-fluid">
@@ -16,7 +48,7 @@
 						<li><a href="#" id="login-from-addpage">Add New Page +</a></li>
 					{else}
 						<li><a href="#" id="opener">Add New Page +</a></li>
-						<li><a href="{$URL}networks/yourNetworks/">Your Networks</a></li>
+						<li><a href="#">Your Networks</a></li>
 						<li><a href="#">Control Panel</a></li>
 					{/if}
 				</ul>
@@ -179,52 +211,12 @@
 						<a class="btn btn-info" href="#">{$flash.message}</a> 
 					{/if}
 				{/if}
-				<!-- <h1>Share To World!</h1>
-				<p>Share To World - Connect All People via Social Networks : share, world, social, facebook, twitter, digg, like, follow</p>
-               -->
-               <div id="graphic">
-   				   
-   				   <div id="par-one">
-		               <img id="arrow-add" src="{$URL_STATIC}img/arrow-add-new-page.png" alt="Add a new social page"/>
-		               
-		               <h4 id="home-title-one">Add Your Social Page</h4>
-		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
-		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
-	               </div>
-	               
-	               <!-- begin counter -->
-	               <div id="counter-hold" >
-	               		<img src="{$URL_STATIC}img/counter-hold.png" alt="Add a new social page"/>
-	               		<p class="counter-text">Users are increasing their audience each minute.</p>
-	               </div>
-	               <!-- end counter -->
-	               
-	               <div id="par-two">
-		               <img id="arrow-sign" src="{$URL_STATIC}img/arrow-sign-up.png" alt="Add a new social page"/>
-		               
-		               <h4 id="home-title-two">Sign Up - It's Free!</h4>
-	                   <p class="pro-text-home text-three">Have instant access to a audience </p>
-	                   <p class="pro-text-home text-four">you have never dreamed before.</p>
-	                	<!-- <h2 class="hand-text">Testing Font</h2> -->
-	              </div>
-                	<br/><br/><br/><br/><br/>
-                	<hr/>
-                	
-                  <div class="row-fluid">
-	             	   <div class="span4" id="par-three">
-			               
-			             
-		               </div>
-		               
-		               <div class="span4" id="par-four">
-			               
-			               
-		               </div>
-	                	
-	                   <div class="span4" id="par-five">   
-		        </div>
-	               </div>
-               </div>
+				
+				
+				{foreach from=$facebook key=k item=page}
+					<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="44" data-show-faces="false"></div>
+				{/foreach}
+               
                 
 			</div>
 		</div> 

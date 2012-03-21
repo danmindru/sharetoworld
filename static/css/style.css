@@ -307,7 +307,37 @@ h4{
 	background:#000000;
 }
 
+.facebook-clicks-button {
+	margin-left: 140px;
+	margin-bottom: 10px;
+	color: #FFF;
+}
+
+.facebook-credits-click-button {
+	margin-left: 10px;
+	margin-bottom: 10px; 
+}
+
+.facebook-credits-required {
+	margin-bottom: 10px;
+}
+
+.facebook-credits-own {
+	margin-bottom: 10px; 
+}
+
+.ui-widget-content a {
+    color: #FFF;
+    //#222;
+}
+
 // media queries - later
 @media only screen and (max-width: 480px){
 	
+}
+
+.facebook-like-button-network {
+	width: 44px;
+	height: 62px;
+	overflow: hidden;
 }

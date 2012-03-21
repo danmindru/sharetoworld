@@ -80,7 +80,7 @@
 			<div class="social-form-default">
 				<form class="well">
 					<img id="arrow-default-add-page" src="{$URL_STATIC}img/arrow-default-add-page.png" alt="Choose Social Networks"/>
-					<h4>Add Your Social Pages</h4>
+					<h4 class="default-add-page-title">Add Your Social Pages</h4>
 					<p class="pro-text">Distribute points in order to get clicks on your links.</p>
 					<p class="point-count">You have: <span class="credits">{$user.user_credits|number_format} Credits</span></p>
 					<p class="pro-text-bottom">Like, +1, Share, Stumble, Pin, Digg or Tweet other pages to get more Credits</p>
@@ -100,7 +100,7 @@
 					<hr />
 					<input type="hidden" id="facebook_clicks" name="facebook_clicks" value="" />
 					<input type="hidden" id="facebook_points_per_click" name="facebook_points_per_click" value="" />
-					<label><a href="" class="btn btn-info no-border-radius" style="margin-left: 10px; margin-bottom: 10px; color: #FFF">Credits per click: <span id="point-per-click"></span></a><a href="" id="btn-required-pronts"class="btn btn-success no-border-radius" style="margin-bottom: 10px; color: #FFF">You need: <span id="required-points"></span></a><a href="" class="btn btn-info no-border-radius" style="margin-bottom: 10px; color: #FFF">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button></label>
+					<label><a href="" class="btn btn-info no-border-radius" style="margin-left: 10px; margin-bottom: 10px; color: #FFF">Credits per click: <span id="point-per-click"></span></a><a href="" id="btn-required-pronts"class="btn btn-success no-border-radius" style="margin-bottom: 10px; color: #FFF">You need: <span id="required-points"></span></a><a href="" class="btn btn-info no-border-radius" style="margin-bottom: 10px; color: #FFF">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; float:right;">Submit</button></label>
 				</form>
 			</div>
 			<div class="social-form" id="social-twitter-form">
@@ -179,50 +179,95 @@
 						<a class="btn btn-info" href="#">{$flash.message}</a> 
 					{/if}
 				{/if}
-				<!-- <h1>Share To World!</h1>
-				<p>Share To World - Connect All People via Social Networks : share, world, social, facebook, twitter, digg, like, follow</p>
-               -->
+				
                <div id="graphic">
    				   
-   				   <div id="par-one">
-		               <img id="arrow-add" src="{$URL_STATIC}img/arrow-add-new-page.png" alt="Add a new social page"/>
-		               
-		               <h4 id="home-title-one">Add Your Social Page</h4>
-		               <p class="pro-text-home text-one">You can add pages from facebook, twitter, google,</p>
-		               <p class="pro-text-home text-two">stumbleupon, pinterest and digg.</p>
-	               </div>
+   				   <div class="row-fluid">
+	             	   <div class="span4" id="par-format">
+			               <img id="arrow-add" src="{$URL_STATIC}img/arrow-add-new-page.png" alt="Add a new social page"/>
+			               
+			               <h4>Add Your Social Page</h4>
+			               <p class="txt">You can add pages from facebook, twitter,</p>
+			               <p class="txt">google, stumbleupon, pinterest and digg.</p>
+	            		</div>
 	               
-	               <!-- begin counter -->
-	               <div id="counter-hold" >
-	               		<img src="{$URL_STATIC}img/counter-hold.png" alt="Add a new social page"/>
-	               		<p class="counter-text">Users are increasing their audience each minute.</p>
-	               </div>
-	               <!-- end counter -->
-	               
-	               <div id="par-two">
-		               <img id="arrow-sign" src="{$URL_STATIC}img/arrow-sign-up.png" alt="Add a new social page"/>
+		               <!-- begin counter -->
+		               <div class="span4" id="par-format">
+		               		<div id="counter-hold">		
+		               			
+		               			<div class="counter-cell first-counter-cell">
+		               				<p class="counter-number">0</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">0</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">0</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">0</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">1</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">3</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">4</p>
+		               			</div>
+		               			<div class="counter-cell">
+		               				<p class="counter-number">7</p>
+		               			</div>
+		               			
+		               			<p class="txt under-counter">Users are increasing their audience each minute.</p>
+		               		</div>
+		               </div>
+		               <!-- end counter -->
 		               
-		               <h4 id="home-title-two">Sign Up - It's Free!</h4>
-	                   <p class="pro-text-home text-three">Have instant access to a audience </p>
-	                   <p class="pro-text-home text-four">you have never dreamed before.</p>
-	                	<!-- <h2 class="hand-text">Testing Font</h2> -->
-	              </div>
-                	<br/><br/><br/><br/><br/>
+		               <div class="span4" id="par-format">
+			               <img id="arrow-sign" src="{$URL_STATIC}img/arrow-sign-up.png" alt="Add a new social page"/>
+			               
+			               <h4>Sign Up - It's Free!</h4>
+		                   <p class="txt">Have instant access to a audience </p>
+		                   <p class="txt">you have never dreamed before.</p>
+		                	<!-- <h2 class="hand-text">Testing Font</h2> -->
+		              </div>
+		          </div>    
+                	<br/><br/><br/><br/><br/><br/><br/>
                 	<hr/>
                 	
+					<h1>Welcome to Share To World - a free service that connects people via  social networks: share, world, social, facebook, twitter, digg, like, follow, pin, +1 or stumble.</h1>
+              
+                	
                   <div class="row-fluid">
-	             	   <div class="span4" id="par-three">
-			               
-			             
+	             	   <div class="span4" id="par-format">
+				            <h5>What you get?</h5>
+				            <p class="txt">Building a network has just got easy!</p>   
+				            <p class="txt">The users of Share The World will be</p>
+				            <p class="txt">connecting with your page faster than</p>
+				            <p class="txt">you could ever begin to imagine.</p>
+				            <p class="txt">Take your page to a global scale, for free!</p>
+				            
 		               </div>
 		               
-		               <div class="span4" id="par-four">
-			               
-			               
+		               <div class="span4" id="par-format">
+				            <h5>Dream become reality</h5>
+				            <p class="txt">The good part has just got a lot better.</p>
+				            <p class="txt">You will instantly have a potential</p>
+				            <p class="txt">audience formed by thousands of people.</p>
+				            <p class="txt">Each click you get connects you with all</p>
+				            <p class="txt">of the target's friends and followers.</p>
 		               </div>
 	                	
-	                   <div class="span4" id="par-five">   
-		        </div>
+	                   <div class="span4" id="par-format">  
+		                   	<h5>No hidden pays or fees</h5>
+				            <p class="txt">What do you have to do in order to get</p>
+				            <p class="txt">access to this incredible service?</p>	 
+				            <p class="txt">Just register and help others grow.</p>
+				            <p class="txt">Each click you will give to others</p>
+				            <p class="txt">is going to be in your advantage.</p>
+		        	   </div>
 	               </div>
                </div>
                 

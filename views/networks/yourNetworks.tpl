@@ -1,5 +1,37 @@
 {include file="header.tpl"}
 
+<div id="fb-root"></div>
+<script>
+{literal}
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId  : '117660814934034',
+      status : true, // check login status
+      cookie : true, // enable cookies to allow the server to access the session
+      xfbml  : true  // parse XFBML
+    });
+    
+	FB.Event.subscribe('edge.create', function(href, widget) {
+		$('[data-href="' + href + '"]').remove();
+		$.get("{/literal}{$URL}networks/index/{literal}", { url: href } );
+    }
+);
+};
+
+  // Load the SDK Asynchronously
+	(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+   
+{/literal}
+</script>
+
+
+
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container-fluid">
@@ -16,7 +48,7 @@
 						<li><a href="#" id="login-from-addpage">Add New Page +</a></li>
 					{else}
 						<li><a href="#" id="opener">Add New Page +</a></li>
-						<li><a href="{$URL}networks/yourNetworks/">Your Networks</a></li>
+						<li><a href="#">Your Networks</a></li>
 						<li><a href="#">Control Panel</a></li>
 					{/if}
 				</ul>
@@ -80,7 +112,7 @@
 			<div class="social-form-default">
 				<form class="well">
 					<img id="arrow-default-add-page" src="{$URL_STATIC}img/arrow-default-add-page.png" alt="Choose Social Networks"/>
-					<h4 class="default-add-page-title">Add Your Social Pages</h4>
+					<h4>Add Your Social Pages</h4>
 					<p class="pro-text">Distribute points in order to get clicks on your links.</p>
 					<p class="point-count">You have: <span class="credits">{$user.user_credits|number_format} Credits</span></p>
 					<p class="pro-text-bottom">Like, +1, Share, Stumble, Pin, Digg or Tweet other pages to get more Credits</p>
@@ -180,96 +212,11 @@
 					{/if}
 				{/if}
 				
-               <div id="graphic">
-   				   
-   				   <div class="row-fluid">
-	             	   <div class="span4" id="par-format">
-			               <img id="arrow-add" src="{$URL_STATIC}img/arrow-add-new-page.png" alt="Add a new social page"/>
-			               
-			               <h4>Add Your Social Page</h4>
-			               <p class="txt">You can add pages from facebook, twitter,</p>
-			               <p class="txt">google, stumbleupon, pinterest and digg.</p>
-	            		</div>
-	               
-		               <!-- begin counter -->
-		               <div class="span4" id="par-format">
-		               		<div id="counter-hold">		
-		               			
-		               			<div class="counter-cell first-counter-cell">
-		               				<p class="counter-number">0</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">0</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">0</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">0</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">1</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">3</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">4</p>
-		               			</div>
-		               			<div class="counter-cell">
-		               				<p class="counter-number">7</p>
-		               			</div>
-		               			
-		               			<p class="txt under-counter">Users are increasing their audience each minute.</p>
-		               		</div>
-		               </div>
-		               <!-- end counter -->
-		               
-		               <div class="span4" id="par-format">
-			               <img id="arrow-sign" src="{$URL_STATIC}img/arrow-sign-up.png" alt="Add a new social page"/>
-			               
-			               <h4>Sign Up - It's Free!</h4>
-		                   <p class="txt">Have instant access to a audience </p>
-		                   <p class="txt">you have never dreamed before.</p>
-		                	<!-- <h2 class="hand-text">Testing Font</h2> -->
-		              </div>
-		          </div>    
-                	<br/><br/><br/><br/><br/><br/><br/>
-                	<hr/>
-                	
-					<h1>Welcome to Share To World - a free service that connects people via  social networks: share, world, social, facebook, twitter, digg, like, follow, pin, +1 or stumble.</h1>
-              
-                	
-                  <div class="row-fluid">
-	             	   <div class="span4" id="par-format">
-				            <h5>What you get?</h5>
-				            <p class="txt">Building a network has just got easy!</p>   
-				            <p class="txt">The users of Share The World will be</p>
-				            <p class="txt">connecting with your page faster than</p>
-				            <p class="txt">you could ever begin to imagine.</p>
-				            <p class="txt">Take your page to a global scale, for free!</p>
-				            
-		               </div>
-		               
-		               <div class="span4" id="par-format">
-				            <h5>Dream become reality</h5>
-				            <p class="txt">The good part has just got a lot better.</p>
-				            <p class="txt">You will instantly have a potential</p>
-				            <p class="txt">audience formed by thousands of people.</p>
-				            <p class="txt">Each click you get connects you with all</p>
-				            <p class="txt">of the target's friends and followers.</p>
-		               </div>
-	                	
-	                   <div class="span4" id="par-format">  
-		                   	<h5>No hidden pays or fees</h5>
-				            <p class="txt">What do you have to do in order to get</p>
-				            <p class="txt">access to this incredible service?</p>	 
-				            <p class="txt">Just register and help others grow.</p>
-				            <p class="txt">Each click you will give to others</p>
-				            <p class="txt">is going to be in your advantage.</p>
-		        	   </div>
-	               </div>
-               </div>
+				
+				{foreach from=$facebook key=k item=page}
+					<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="44" data-show-faces="false"></div>
+				{/foreach}
+               
                 
 			</div>
 		</div> 

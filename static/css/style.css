@@ -319,6 +319,37 @@ text-decoration: none;
 	margin-top:10px;
 }
 
+.facebook-clicks-button {
+	margin-left: 140px;
+	margin-bottom: 10px;
+	color: #FFF;
+}
+
+.facebook-credits-click-button {
+	margin-left: 10px;
+	margin-bottom: 10px; 
+}
+
+.facebook-credits-required {
+	margin-bottom: 10px;
+}
+
+.facebook-credits-own {
+	margin-bottom: 10px; 
+}
+
+.ui-widget-content a {
+    color: #FFF;
+    //#222;
+}
+
+
+.facebook-like-button-network {
+	width: 44px;
+	height: 62px;
+	overflow: hidden;
+}
+
 // Media Query Start - SKIP
 // Place at the end of the file
 	@media only screen and (max-width: 1300px){
@@ -411,3 +442,4 @@ text-decoration: none;
 	
 	}
 // Media Query END
+

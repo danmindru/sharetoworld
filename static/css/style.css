@@ -244,12 +244,12 @@ h5{
 }
 #arrow-add{
 	position:absolute;
-	left:180px;
+	left:250px;
 	top:90px;
 }
 #arrow-sign{
 	position:absolute;
-	right:150px;
+	right:220px;
 	top:90px;
 }
 #graphic{
@@ -286,7 +286,7 @@ h5{
 
 .counter-cell{
 width:12%;
-height:45px;
+height:65px;
 float:left;
 border-right:1px solid #666666;
 border-top:1px solid #666666;
@@ -308,7 +308,7 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 
 .counter-number{
 	font-family:"Pro",serif;
-	margin-top:20%;
+	margin-top:25%;
 	color:white;
 }
 
@@ -362,7 +362,73 @@ text-decoration: none;
 
 // Media Query Start - SKIP
 // Place at the end of the file
-	@media only screen and (max-width: 1300px){
+	@media only screen and (min-width: 1301px) and (max-width: 1500px){
+	
+	.counter-cell{
+	height:45px;
+	}
+	.credits{
+	color:#333333;
+	font-size:1.6em;
+	}
+	#arrow-add{
+		position:absolute;
+		left:180px;
+		top:90px;
+	}
+	#arrow-sign{
+		position:absolute;
+		right:150px;
+		top:90px;
+	}
+	#graphic{
+		min-height:400px;
+	}
+	
+	#graphic .pro-text-home{
+		font-family:'Pro',serif;
+		margin-left:124px;
+		font-size:1.1em;
+		color:#000;
+	}
+	
+	.hero-unit .txt {
+		font-family:'Pro',serif;
+		font-size:1.1em;
+		padding:0px;
+		margin:0px;
+		line-height:18px;
+	}
+	
+	.counter-number{
+	font-family:"Pro",serif;
+	margin-top:20%;
+	color:white;
+	}
+	
+	}
+	
+	@media only screen and (min-width: 1501px) and (max-width: 1700px){
+	
+	.counter-cell{
+	height:55px;
+	}
+	
+	}
+	
+	@media only screen and (min-width: 1301px) and (max-width: 1500px){
+	
+	.counter-cell{
+	height:48px;
+	}
+	.hero-unit .txt {
+	font-size:1.0em;
+	}
+	
+	}
+	
+	
+	@media only screen and (min-width: 1201px) and (max-width: 1300px){
 	
 	.counter-cell{
 	height:40px;
@@ -373,7 +439,8 @@ text-decoration: none;
 	
 	}
 	
-	@media only screen and (max-width: 1200px){
+	
+	@media only screen and (min-width: 1101px) and (max-width: 1200px){
 	.counter-cell{
 	height:35px;
 	}
@@ -389,10 +456,21 @@ text-decoration: none;
 	h5{
 	font-size:1.5em;
 	}
+	
+	#arrow-add{
+		position:absolute;
+		left:180px;
+		top:90px;
+	}
+	#arrow-sign{
+		position:absolute;
+		right:150px;
+		top:90px;
+	}
 		
 	}
 	
-	@media only screen and (max-width: 1100px){
+	@media only screen and (min-width: 1001px) and (max-width: 1100px){
 	.counter-cell{
 	height:33px;
 	}
@@ -400,9 +478,21 @@ text-decoration: none;
 	.counter-number{
 	margin-top:15%;
 	}
+	
+	#arrow-add{
+		position:absolute;
+		left:180px;
+		top:90px;
+	}
+	#arrow-sign{
+		position:absolute;
+		right:150px;
+		top:90px;
 	}
 	
-	@media only screen and (max-width: 1000px){
+	}
+	
+	@media only screen and (min-width: 901px) and (max-width: 1000px){
 	.counter-cell{
 	height:30px;
 	}
@@ -418,9 +508,21 @@ text-decoration: none;
 	font-family: 'Pro', serif;
 	font-size:1.5em;
 	}
+	
+	#arrow-add{
+		position:absolute;
+		left:180px;
+		top:90px;
+	}
+	#arrow-sign{
+		position:absolute;
+		right:150px;
+		top:90px;
 	}
 	
-	@media only screen and (max-width: 900px){
+	}
+	
+	@media only screen and (min-width: 801px) and (max-width: 900px){
 	.counter-cell{
 	height:28px;
 	}
@@ -429,6 +531,17 @@ text-decoration: none;
 	}
 	.counter-number{
 	margin-top:5%;
+	}
+	
+	#arrow-add{
+		position:absolute;
+		left:180px;
+		top:90px;
+	}
+	#arrow-sign{
+		position:absolute;
+		right:150px;
+		top:90px;
 	}
 	
 	}
@@ -450,6 +563,25 @@ text-decoration: none;
 	font-size:1.4em;
 	}
 	
+	#arrow-add{
+		position:absolute;
+		left:130px;
+		top:90px;
 	}
+	#arrow-sign{
+		position:absolute;
+		right:110px;
+		top:90px;
+	}
+	
+	.counter-number{
+	font-family:"Pro",serif;
+	margin-top:5%;
+	color:white;
+	}
+	
+	}
+	
+	
 // Media Query END
 

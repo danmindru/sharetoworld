@@ -244,7 +244,7 @@
 	             	   <div class="span4" id="par-format">
 				            <h5>What you get?</h5>
 				            <p class="txt">Building a network has just got easy!</p>   
-				            <p class="txt">The users of Share The World will be</p>
+				            <p class="txt">The users of Share to World will be</p>
 				            <p class="txt">connecting with your page faster than</p>
 				            <p class="txt">you could ever begin to imagine.</p>
 				            <p class="txt">Take your page to a global scale, for free!</p>

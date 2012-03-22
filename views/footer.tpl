@@ -1,6 +1,5 @@
-		<div class="container-fluid">
 			<div class="row-fluid footer1 footer-background">
-				<div class="span3">
+				<div class="span3 bottom-link">
 					<a href="#">Facebook</a><br />
 					<a href="#">Twitter</a><br />
 					<a href="#">Google+</a><br />
@@ -8,7 +7,7 @@
 					<a href="#">Digg</a><br />
 					<a href="#">StubmelUpon</a>
 				</div>
-				<div class="span3">
+				<div class="span3 bottom-link">
 					<a href="#">Facebook</a><br />
 					<a href="#">Twitter</a><br />
 					<a href="#">Google+</a><br />
@@ -16,7 +15,7 @@
 					<a href="#">Digg</a><br />
 					<a href="#">StubmelUpon</a>
 				</div>
-				<div class="span3">
+				<div class="span3 bottom-link">
 					<a href="#">Facebook</a><br />
 					<a href="#">Twitter</a><br />
 					<a href="#">Google+</a><br />
@@ -24,7 +23,7 @@
 					<a href="#">Digg</a><br />
 					<a href="#">StubmelUpon</a>
 				</div>
-				<div class="span3">
+				<div class="span3 bottom-link">
 					<a href="#">Facebook</a><br />
 					<a href="#">Twitter</a><br />
 					<a href="#">Google+</a><br />
@@ -33,8 +32,8 @@
 					<a href="#">StubmelUpon</a>
 				</div>
 			</div>
-		</div>
 		
+			
 		<script type="text/javascript" src="{$URL_STATIC}js/bootstrap-transition.js"></script>
 		<script type="text/javascript" src="{$URL_STATIC}js/bootstrap-alert.js"></script>
 		<script type="text/javascript" src="{$URL_STATIC}js/bootstrap-modal.js"></script>

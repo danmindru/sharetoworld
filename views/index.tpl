@@ -183,7 +183,7 @@
                <div id="graphic">
    				   
    				   <div class="row-fluid">
-	             	   <div class="span4" id="par-format">
+	             	   <div class="span4 par-format">
 			               <img id="arrow-add" src="{$URL_STATIC}img/arrow-add-new-page.png" alt="Add a new social page"/>
 			               
 			               <h4>Add Your Social Page</h4>
@@ -192,7 +192,7 @@
 	            		</div>
 	               
 		               <!-- begin counter -->
-		               <div class="span4" id="par-format">
+		               <div class="span4 par-format">
 		               		<div id="counter-hold">		
 		               			
 		               			<div class="counter-cell first-counter-cell">
@@ -225,7 +225,7 @@
 		               </div>
 		               <!-- end counter -->
 		               
-		               <div class="span4" id="par-format">
+		               <div class="span4 top-info par-format">
 			               <img id="arrow-sign" src="{$URL_STATIC}img/arrow-sign-up.png" alt="Add a new social page"/>
 			               
 			               <h4>Sign Up - It's Free!</h4>
@@ -234,14 +234,22 @@
 		                	<!-- <h2 class="hand-text">Testing Font</h2> -->
 		              </div>
 		          </div>    
-                	<br/><br/><br/><br/><br/><br/><br/>
+                
                 	<hr/>
                 	
 					<h1>Welcome to Share To World - a free service that connects people via  social networks: share, world, social, facebook, twitter, digg, like, follow, pin, +1 or stumble.</h1>
-              
-                	
+              	  <div id="social-tree">
+              	  	<img id="tree" src="{$URL_STATIC}img/tree-final.png" alt="Share to world social tree"/>
+              	  	<h2 class="tree-text">Grow Your Social Network Tree</h2>
+              	  </div>
+              	  
+              	  <hr/>
+                  <br/>
+                  
                   <div class="row-fluid">
-	             	   <div class="span4" id="par-format">
+	             	   <div class="span4 par-format">
+				            
+				            <img id="question" src="{$URL_STATIC}img/question-final.png" alt="Share to world social tree"/>
 				            <h5>What you get?</h5>
 				            <p class="txt">Building a network has just got easy!</p>   
 				            <p class="txt">The users of Share to World will be</p>
@@ -251,8 +259,9 @@
 				            
 		               </div>
 		               
-		               <div class="span4" id="par-format">
-				            <h5>Dream become reality</h5>
+		               <div class="span4 par-format">
+		               		<img id="globe" src="{$URL_STATIC}img/planet-final.png" alt="Share to world social tree"/>
+				            <h5>Getting Global</h5>
 				            <p class="txt">The good part has just got a lot better.</p>
 				            <p class="txt">You will instantly have a potential</p>
 				            <p class="txt">audience formed by thousands of people.</p>
@@ -260,8 +269,9 @@
 				            <p class="txt">of the target's friends and followers.</p>
 		               </div>
 	                	
-	                   <div class="span4" id="par-format">  
-		                   	<h5>No hidden pays or fees</h5>
+	                   <div class="span4 par-format">  
+		                   	<img id="gift" src="{$URL_STATIC}img/gift-final.png" alt="Share to world social tree"/>
+		                   	<h5>No hidden pays</h5>
 				            <p class="txt">What do you have to do in order to get</p>
 				            <p class="txt">access to this incredible service?</p>	 
 				            <p class="txt">Just register and help others grow.</p>

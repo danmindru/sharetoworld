@@ -4,6 +4,7 @@ require_once(FUNCTIONS_DIR 	. 'validate.php');
 require_once(DB_DIR 		. "sessions.php");
 require_once(DB_DIR 		. "users.php");
 require_once(DB_DIR 		. "facebook.php");
+require_once(DB_DIR 		. "clicks.php");
 
 
 /**
@@ -75,10 +76,17 @@ class cpanel implements IController {
 				}
 				
 				//Add page to database 
-				$data 					= array();
-				$data['user_id'] 		= $user->get_user_id();
-				$data['facebook_url']	= $_POST['facebook_url'];
+				$data 								= array();
+				$data['user_id'] 					= $user->get_user_id();
+				$data['facebook_url']				= $_POST['facebook_url'];
+				$data['facebook_points_per_click']	= $_POST['facebook_points_per_click'];
+				$data['facebook_requested_clicks']	= $_POST['facebook_clicks'];
 				dbFacebook::create($data);
+				
+				//Get the user's points for the page
+				$data					= array();
+				$data['user_credits']	= $user->get_user_credits() - ($_POST['facebook_points_per_click'] * $_POST['facebook_clicks']);				
+				dbUsers::update($user->get_user_id(), $data);
 				
 				//Display creation confirmation message
 				flash_success('Your Facebook page was successfully registered.');
@@ -89,6 +97,40 @@ class cpanel implements IController {
 				flash_error($e->getMessage());
 				redirect();
 			}
+		}
+	}
+
+	public function facebookLike() {
+		$user	= User::get_instance();
+		
+		//Check if user is loggein
+		$user->loggedin_required();
+		
+		//Get the liked page
+		$page 	= dbFacebook::get_by_id($_GET['ref']); 
+		
+		if(!dbClicks::exists($page['facebook_id'], $user->get_user_id())) {
+			//Increase Page Clicks
+			$data						= array();
+			$data['facebook_clicks'] 	= $page['facebook_clicks'] + 1;
+			 
+			if( $data['facebook_clicks'] >= $page['facebook_requested_clicks'] ) {
+				//Disable page if it reached requested clicks
+				$data['facebook_status'] = 'disabled';
+			}
+			dbFacebook::update($page['facebook_id'], $data);
+			
+			//Create user click
+			$data					= array();
+			$data['facebook_id'] 	= $page['facebook_id'];
+			$data['user_id']		= $user->get_user_id();
+			$data['click_date']		= time();
+			dbClicks::create($data);
+			
+			//Add earned credits to user's credits
+			$data					= array();
+			$data['user_credits']	= $user->get_user_credits() + $page['facebook_points_per_click'];
+			dbUsers::update($user->get_user_id(), $data);
 		}
 	}
 }

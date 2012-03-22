@@ -12,8 +12,17 @@
     });
     
 	FB.Event.subscribe('edge.create', function(href, widget) {
+		console.log(widget);
+		$( "#user-credits" ).hide();
+		
+		var myOptions = widget._attr.ref.split('/');
+		
+		var total = $( "#user-credits" ).text();
+		total = eval(total + "+" + myOptions[1]);
+		$( "#user-credits" ).fadeIn(2000).text(total);
+		
 		$('[data-href="' + href + '"]').remove();
-		$.get("{/literal}{$URL}networks/index/{literal}", { url: href } );
+		$.get( "{/literal}{$URL}cpanel/facebookLike/{literal}", { url: href, ref: myOptions[0] } );
     }
 );
 };
@@ -57,7 +66,7 @@
 					{if !$user.is_loggedin}
 						<a href="#" class="btn no-border-radius" id="login">Login</a>&nbsp;<a href="#" class="btn btn-inverse no-border-radius" id="register">Register</a>
 					{else}
-						<a href="#" class="btn btn-success no-border-radius">{$user.user_credits|number_format} Credits</a>
+						<a href="#" class="btn btn-success no-border-radius"><span id="user-credits">{$user.user_credits}</span> Credits</a>
 						<a href="{$URL}account/logout/" class="btn no-border-radius">Logout [{$user.user_name}]</a>
 					{/if}
 				</p>
@@ -212,13 +221,10 @@
 					{/if}
 				{/if}
 				
-				
 				{foreach from=$facebook key=k item=page}
-					<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="44" data-show-faces="false"></div>
+					<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="50" data-ref="{$page.facebook_id}/{$page.facebook_points_per_click}" data-show-faces="false" style="margin-right: 100px;"></div>
 				{/foreach}
-               
-                
-			</div>
+            </div>
 		</div> 
 	</div>
 </div>

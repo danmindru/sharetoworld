@@ -31,6 +31,22 @@ class dbFacebook {
 	}
 	
 	/**
+	 * Get a page using id
+	 * @param int $facebook_id
+	 * 
+	 * @return array 
+	 */
+	public static function get_by_id ($facebook_id) {
+		$db = db::get_instance();
+		
+		$query = sprintf("SELECT * FROM facebook_api
+						  WHERE facebook_id = '%s'",
+						  $db->db_escape($facebook_id));
+		
+		return $db->db_fetch($query);
+	}
+	
+	/**
 	 * Get pages
 	 * 
 	 * @return array
@@ -40,6 +56,28 @@ class dbFacebook {
 		
 		$query = "SELECT * FROM facebook_api";
 		
+		return $db->db_fetch_all($query);
+	}
+	
+	/**
+	 * Get pages
+	 * 
+	 * @return array
+	 */
+	public static function get_all_for_user ($user_id) {
+		$db = db::get_instance();
+		
+		$db = db::get_instance();
+		
+		$query = sprintf("	SELECT * 
+							FROM facebook_api 
+							WHERE facebook_id NOT IN (
+								SELECT facebook_id 
+								FROM users_clicks 
+								WHERE users_clicks.user_id = '%s') 	
+							AND facebook_status != 'disabled'",
+						$db->db_escape($user_id));	
+		//LEFT JOIN users_clicks ON facebook_api.facebook_id = users_clicks.facebook_id wHERE users_clicks.users_id != '%s'
 		return $db->db_fetch_all($query);
 	}
 	

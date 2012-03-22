@@ -17,20 +17,20 @@ class networks implements IController {
 	 * Display home page
 	 */
 	public function index() {
-		$user	= User::get_instance();
-	
-		$data					= array();
-		$data['facebook_url'] 	= $_GET['url'];
-		$data['user_id']		= $user->get_user_id();
+		$front 	= FrontController::get_instance();
 		
-		dbFacebook::create($data);
+		$view  	= new View();
+		$result = $view->fetch('networks/index.tpl');
+		$front->setBody($result);
 	}
 	
 	public function yournetworks() {
 		$front 	= FrontController::get_instance();	
 		$user   = User::get_instance();	
 		
-		$pages 	= dbFacebook::get_all();
+		$user->loggedin_required();
+		
+		$pages 	= dbFacebook::get_all_for_user($user->get_user_id());
 		
 		$view  	= new View();
 		$view	->assign('facebook', $pages);

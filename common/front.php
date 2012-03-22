@@ -50,7 +50,7 @@ class FrontController {
             }
             
             if (count($keys) != count($values)) {
-				flash_error('Wrong URL parameters');
+            	
             } else {        
    	        	$this->_params = array_combine($keys, $values);
             }

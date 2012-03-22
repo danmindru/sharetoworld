@@ -150,8 +150,8 @@ class User implements ArrayAccess {
      */
     public function loggedin_required () {
 		if (!$this->is_loggedin()) {
-			flash_error('Pentru a avea acces trebuie sa te autentifici!');
-			redirect('account/login');
+			flash_error('Access denied!');
+			redirect('');
 		}	
     }
     

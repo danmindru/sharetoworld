@@ -360,6 +360,28 @@ text-decoration: none;
 	height: 70px;
 	overflow: hidden;
 }
+
+.fb-container {
+	float: left;
+	width: 103px;
+	height: 130px;
+	border: 1px solid #2489CE;
+	margin-right: 50px;
+	padding: 5px  5px 5px 5px;
+	background: #FFF;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
+  	border-radius: 0%     0%     25%     25% /     0%     0%     3%     3%;
+}
+
+.fb-page-credits {
+	width: 80px;
+}
+
+.social-buttons-container {
+	width: 495px;
+	margin: 0 auto;
+}
+
 #social-tree {
 	width:416px;
 	margin:10px auto;

@@ -31,8 +31,29 @@
 					<a href="#">Digg</a><br />
 					<a href="#">StubmelUpon</a>
 				</div>
+				
 			</div>
-		
+			
+			<div class="row-fluid footer2 footer-background">
+				<p id="copy-right">
+				
+				{php}
+					 $firstyear = 2012;
+					 $time = time () ; 
+					 $year= date("Y",$time); 
+					if($firstyear == $year)
+				 	 {
+						 echo "Copyright &copy; Share to World $firstyear";
+				 	 }
+					else
+					 {
+						 echo "Copyright &copy; Share to World $firstyear - " . $year;
+					 }
+				{/php}	
+					<br/>
+					<span class="copy-notice">This site does not use private information from facebook, twitter, google, linkedin, pinterest, digg, stumbleupon and is not affiliated with them or their services in any way.</span>				
+				</p>
+			</div>
 			
 		<script type="text/javascript" src="{$URL_STATIC}js/bootstrap-transition.js"></script>
 		<script type="text/javascript" src="{$URL_STATIC}js/bootstrap-alert.js"></script>

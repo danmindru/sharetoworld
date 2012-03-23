@@ -1,3 +1,4 @@
+			<hr/>
 			<div class="row-fluid footer1 footer-background">
 				<div class="span3 bottom-link">
 					<a href="#">Facebook</a><br />

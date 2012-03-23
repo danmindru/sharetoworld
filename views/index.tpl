@@ -238,7 +238,7 @@
                 	<hr/>
                 	
 					<h1>Welcome to Share To World - a free service that connects people via  social networks: 
-						share, to, world, social, networking, facebook, twitter, digg, google, stumble upon, linledin, like, follow, tweet, share, pin, +1 or stumble - free, easy and safe. </h1>
+						share, to, world, social, networking, facebook, twitter, digg, google, stumble upon, linkedin, like, follow, tweet, share, pin, +1 or stumble - free, easy and safe. </h1>
               	  <div id="social-tree">
               	  	<img id="tree" src="{$URL_STATIC}img/tree-final.png" alt="Share to world social tree"/>
               	  	<h3 class="tree-text">Grow Your Social Network Tree</h3>
@@ -249,36 +249,33 @@
                   <br/>
                   
                   <div class="row-fluid">
-	             	   <div class="span4 par-format">
+	             	   <div class="span4 par-format-justify">
 				            
 				            <img id="question" src="{$URL_STATIC}img/question-final.png" alt="Share to world social tree"/>
 				            <h5>What you get?</h5>
-				            <p class="txt">Building a network has just got easy!</p>   
-				            <p class="txt">The users of Share to World will be</p>
-				            <p class="txt">connecting with your page faster than</p>
-				            <p class="txt">you could ever begin to imagine.</p>
-				            <p class="txt">Take your page to a global scale, for free!</p>
+				            <p class="txt">Building a network has just got easy! 
+				            	The users of Share to World will be 
+				            	connecting with your page faster than you could ever begin to imagine.
+				            	Take your page to a global scale, for free!</p>
 				            
 		               </div>
 		               
-		               <div class="span4 par-format">
+		               <div class="span4 par-format-justify">
 		               		<img id="globe" src="{$URL_STATIC}img/planet-final.png" alt="Share to world social tree"/>
 				            <h5>Getting Global</h5>
-				            <p class="txt">The good part has just got a lot better.</p>
-				            <p class="txt">You will instantly have a potential</p>
-				            <p class="txt">audience formed by thousands of people.</p>
-				            <p class="txt">Each click you get connects you with all</p>
-				            <p class="txt">of the target's friends and followers.</p>
+				            <p class="txt">The good part has just got a lot better. You will instantly have a potential 
+				            	audience formed by thousands of people. Each click you get connects you with all
+				            	of the target's friends and followers.</p>
 		               </div>
 	                	
-	                   <div class="span4 par-format">  
+	                   <div class="span4 par-format-justify">  
 		                   	<img id="gift" src="{$URL_STATIC}img/gift-final.png" alt="Share to world social tree"/>
 		                   	<h5>No hidden pays</h5>
-				            <p class="txt">What do you have to do in order to get</p>
-				            <p class="txt">access to this incredible service?</p>	 
-				            <p class="txt">Just register and help others grow.</p>
-				            <p class="txt">Each click you will give to others</p>
-				            <p class="txt">is going to be in your advantage.</p>
+				            <p class="txt">What do you have to do in order to get
+				            	access to this incredible service?
+				            	Just register and help others grow.
+				            	Each click you will give to others
+				            	is going to be in your advantage.</p>
 		        	   </div>
 		        	   
 	               </div>

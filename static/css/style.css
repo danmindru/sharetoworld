@@ -109,37 +109,43 @@ a {
 
 .footer1
 {
-	min-height:300px;
- 	background-image: linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
-	background-image: -o-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
-	background-image: -moz-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
-	background-image: -webkit-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
-	background-image: -ms-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
-
+	min-height:100px;
+	background:#161d2a;
+	background-image: linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
+	background-image: -o-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
+	background-image: -moz-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
+	background-image: -webkit-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
+	background-image: -ms-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
 	background-image: -webkit-gradient(
 	linear,
 	 bottom,
 	1 top,
 	color-stop(0.01, #2D80AA),
-	color-stop(0.91, #F5F5F5)
+	color-stop(0.91, #0b256e)
 );
-	border-bottom:1px solid #3384ac;
-	padding-bottom:20px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0b256e', endColorstr='#2D80AA', GradientType=0);
+	*/
 }
 
 .footer2{
-	min-height:100px;
 	background:#2D80AA;
 }
 
 
 .bottom-link{
-	margin-top:220px;
+	margin-top:35px;
 }
 
 #copy-right{
-	margin-top:60px;
+	margin-top:15px;
 	color:white;
+	border-top:1px dotted white;
+	padding-top:15px;
+}
+.dotted-line{
+	position: absolute;
+	border-bottom:1px dotted #000;
+	height:1px;
 }
 
 .copy-notice{
@@ -307,6 +313,12 @@ h5{
 	min-height:80px;
 	text-align:center;
 }
+
+.par-format-justify{
+	min-height:20px;
+	text-align:justify;
+}
+
 
 #counter-hold{
 	width:100%;

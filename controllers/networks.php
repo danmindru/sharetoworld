@@ -38,6 +38,20 @@ class networks implements IController {
 		$front->setBody($result);
 	}
 	
+	public function twitter() {
+		$front 	= FrontController::get_instance();	
+		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		
+		$pages 	= dbFacebook::get_all_for_user($user->get_user_id());
+		
+		$view  	= new View();
+		$view	->assign('facebook', $pages);
+		$result = $view->fetch('networks/twitter.tpl');
+		$front->setBody($result);
+	}
+	
 	
 }
 

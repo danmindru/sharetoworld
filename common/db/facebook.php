@@ -75,7 +75,7 @@ class dbFacebook {
 								SELECT facebook_id 
 								FROM users_clicks 
 								WHERE users_clicks.user_id = '%s') 	
-							AND facebook_status != 'disabled'",
+							AND facebook_status != 'disabled' ORDER BY facebook_points_per_click DESC LIMIT 3",
 						$db->db_escape($user_id));	
 		//LEFT JOIN users_clicks ON facebook_api.facebook_id = users_clicks.facebook_id wHERE users_clicks.users_id != '%s'
 		return $db->db_fetch_all($query);

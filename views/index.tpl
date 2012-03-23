@@ -237,12 +237,14 @@
                 
                 	<hr/>
                 	
-					<h1>Welcome to Share To World - a free service that connects people via  social networks: share, world, social, facebook, twitter, digg, like, follow, pin, +1 or stumble.</h1>
+					<h1>Welcome to Share To World - a free service that connects people via  social networks: 
+						share, to, world, social, networking, facebook, twitter, digg, google, stumble upon, linledin, like, follow, tweet, share, pin, +1 or stumble - free, easy and safe. </h1>
               	  <div id="social-tree">
               	  	<img id="tree" src="{$URL_STATIC}img/tree-final.png" alt="Share to world social tree"/>
-              	  	<h2 class="tree-text">Grow Your Social Network Tree</h2>
+              	  	<h3 class="tree-text">Grow Your Social Network Tree</h3>
+              	  	
               	  </div>
-              	  
+              	  <h2>Aquire a global audience and increase the number of followers on all your social networks.</h2>
               	  <hr/>
                   <br/>
                   
@@ -278,6 +280,7 @@
 				            <p class="txt">Each click you will give to others</p>
 				            <p class="txt">is going to be in your advantage.</p>
 		        	   </div>
+		        	   
 	               </div>
                </div>
                 

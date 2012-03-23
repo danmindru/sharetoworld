@@ -110,24 +110,40 @@ a {
 .footer1
 {
 	min-height:300px;
- 	background-image: linear-gradient( bottom, #2D80AA 29%, #F5F5F5 91%);
-	background-image: -o-linear-gradient( bottom, #2D80AA 29%, #F5F5F5 91%);
-	background-image: -moz-linear-gradient( bottom, #2D80AA 29%, #F5F5F5 91%);
-	background-image: -webkit-linear-gradient( bottom, #2D80AA 29%, #F5F5F5 91%);
-	background-image: -ms-linear-gradient( bottom, #2D80AA 29%, #F5F5F5 91%);
-	
+ 	background-image: linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
+	background-image: -o-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
+	background-image: -moz-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
+	background-image: -webkit-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
+	background-image: -ms-linear-gradient( bottom, #2D80AA 1%, #F5F5F5 91%);
+
 	background-image: -webkit-gradient(
 	linear,
 	 bottom,
 	1 top,
-	color-stop(0.29, #2D80AA),
+	color-stop(0.01, #2D80AA),
 	color-stop(0.91, #F5F5F5)
-	);
-	margin-top:-2px;
+);
+	border-bottom:1px solid #3384ac;
+	padding-bottom:20px;
 }
 
+.footer2{
+	min-height:100px;
+	background:#2D80AA;
+}
+
+
 .bottom-link{
-	margin-top:150px;
+	margin-top:220px;
+}
+
+#copy-right{
+	margin-top:60px;
+	color:white;
+}
+
+.copy-notice{
+	font-size: 0.8em;
 }
 
 .dialog-container {
@@ -197,6 +213,21 @@ a {
 	margin-left:-15px;
 	position:absolute;
 }
+h1{
+	text-align:center;
+}
+h2{
+	text-align:center;
+	font-family:'Pro',serif;
+	font-size:1.2em;
+	margin-bottom:40px;
+}
+h3{
+	text-align:center;
+	font-family:'Pro',serif;
+}
+
+
 h4{
 	font-family: 'Pro', serif;
 	font-size:1.7em;
@@ -325,10 +356,8 @@ text-decoration: none;
 .hero-unit h1{
 	font-family:"Pro",serif;
 	font-size:1.4em;
-	width:1050px;
-	margin:0 auto;
-	margin-bottom:40px;
-	margin-top:10px;
+	margin-bottom:10px;
+	margin-top:40px;
 }
 
 .facebook-clicks-button {
@@ -366,52 +395,12 @@ text-decoration: none;
 }
 
 #social-tree .tree-text{
-	margin-left:35px;
 	font-family:"Pro",serif;
 	color:black;
 }
 
 .top-info{
-	margin-bottom:30%;
-}
-
-.footer2
-{
-	min-height:100px;
- 	padding-bottom: 4px;
-  	height:auto;
-  	color: #F5F5F5;
-	background-color: #151d2a;
-	background-image: -moz-linear-gradient(top, #000000, #151d2a);
-	background-image: -ms-linear-gradient(top, #000000, #151d2a);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#151d2a));
-	background-image: -webkit-linear-gradient(top, #000000, #151d2a);
-	background-image: -o-linear-gradient(top, #151d2a, #2D80AA);
-	background-image: linear-gradient(top, #151d2a, #2D80AA);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#151d2a', endColorstr='#2D80AA', GradientType=0);
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-}
-
-.footer3
-{
-	min-height:100px;
-	background-image: linear-gradient(left bottom, #000000 51%, #151D2A 83%, #F5F5F5 100%);
-	background-image: -o-linear-gradient(left bottom, #000000 51%, #151D2A 83%, #F5F5F5 100%);
-	background-image: -moz-linear-gradient(left bottom, #000000 51%, #151D2A 83%, #F5F5F5 100%);
-	background-image: -webkit-linear-gradient(left bottom, #000000 51%, #151D2A 83%, #F5F5F5 100%);
-	background-image: -ms-linear-gradient(left bottom, #000000 51%, #151D2A 83%, #F5F5F5 100%);
-	
-	background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	1 top,
-	color-stop(0.51, #000000),
-	color-stop(0.83, #151D2A),
-	color-stop(1, #F5F5F5)
-	);
+	margin-bottom:20px;
 }
 
 // Media Query Start - SKIP

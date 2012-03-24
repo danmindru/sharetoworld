@@ -1,12 +1,12 @@
 			<hr/>
 			<div class="row-fluid footer1 footer-background">
 				<div class="span3 bottom-link">
-					<a href="#">Facebook</a><br />
-					<a href="#">Twitter</a><br />
-					<a href="#">Google+</a><br />
-					<a href="#">LinkedIn</a><br />
-					<a href="#">Digg</a><br />
-					<a href="#">StubmelUpon</a>
+					<a href="{$URL}about/about-us">About Share to World</a><br />
+					<a href="{$URL}about/terms">Terms and Conditions</a><br />
+					<a href="{$URL}about/policy">Privacy Policy</a><br />
+					<a href="{$URL}about/contact">Contact Share to World</a><br />
+					<a href="{$URL}about/faq">Frequently Asked Questions</a><br />
+					<a href="{$URL}about/help">Help and Indications</a>
 				</div>
 				<div class="span3 bottom-link">
 					<a href="#">Facebook</a><br />

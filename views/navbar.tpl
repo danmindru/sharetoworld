@@ -14,8 +14,9 @@
 						<li><a href="#" id="login-from-addpage">Add New Page +</a></li>
 					{else}
 						<li><a href="#" id="opener">Add New Page +</a></li>
-						<li><a href="{$URL}networks/yourNetworks/">Your Networks</a></li>
-						<li><a href="#">Control Panel</a></li>
+						<li><a href="{$URL}networks/yourNetworks/">Get Points</a></li>
+						<li><a href="#">Your Pages</a></li>
+						<li><a href="#">Statistics</a></li>
 					{/if}
 				</ul>
 				

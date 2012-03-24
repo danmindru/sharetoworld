@@ -67,6 +67,8 @@
 					{/if}
 				{/if}
 				
+				
+				
 				<div class="social-buttons-container">
 					{foreach from=$facebook key=k item=page}
 						<div class="fb-container" id="fbpage{$page.facebook_id}">
@@ -76,6 +78,15 @@
 						</div>
 					{/foreach}
 				</div>
+					
+					<img id="arrow-facebook-points" src="{$URL_STATIC}img/arrow-facebook-points.png" alt="Get points by clicking the buttons"/>
+					
+				<div id="facebook-instructions-container" class="par-format-justify">
+					<h4>You Are One Click Away From Getting More Points</h4>
+					<p class="facebook-instructions-text">Like a link in order to get the displayed credits.<br/>We will display only 3 buttons at the same time for faster loading.<br/>When you have clicked all of them, we will display 3 more!</p>
+				</div>
+				
+				
             </div>
 		</div> 
 	</div>

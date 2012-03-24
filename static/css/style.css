@@ -110,30 +110,30 @@ a {
 .footer1
 {
 	min-height:100px;
-	background:#161d2a;
-	background-image: linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
-	background-image: -o-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
-	background-image: -moz-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
-	background-image: -webkit-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
-	background-image: -ms-linear-gradient( bottom, #2D80AA 1%, #0b256e 91%);
+	background:#2d80ab;
+	background-image: linear-gradient( bottom, #47a2d9 1%, #2d80ab 91%);
+	background-image: -o-linear-gradient( bottom, #47a2d9 1%, #2d80ab 91%);
+	background-image: -moz-linear-gradient( bottom, #47a2d9 1%, #2d80ab 91%);
+	background-image: -webkit-linear-gradient( bottom, #47a2d9 1%, #2d80ab 91%);
+	background-image: -ms-linear-gradient( bottom, #47a2d9 1%, #2d80ab 91%);
 	background-image: -webkit-gradient(
 	linear,
 	 bottom,
 	1 top,
-	color-stop(0.01, #2D80AA),
-	color-stop(0.91, #0b256e)
+	color-stop(0.01, #47a2d9),
+	color-stop(0.91, #2d80ab)
 );
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0b256e', endColorstr='#2D80AA', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d80ab', endColorstr='#47a2d9', GradientType=0);
 	*/
 }
 
 .footer2{
-	background:#2D80AA;
+	background:#47a2d9;
 }
 
 
 .bottom-link{
-	margin-top:35px;
+	margin-top:15px;
 }
 
 #copy-right{
@@ -290,6 +290,13 @@ h5{
 	right:220px;
 	top:90px;
 }
+#arrow-facebook-points{
+	position:absolute;
+	top:180px;
+	right:28%;
+}
+
+
 #graphic{
 	min-height:400px;
 }
@@ -360,9 +367,15 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 	margin-left:150px;
 }
 
+.span3 a{
+	text-align:left;
+	float:left;
+	padding-left:100px;
+}
+
 .span3 a:hover {
-color: #B8BFBF;
-text-decoration: none;
+	color: #B8BFBF;
+	text-decoration: none;
 }
 
 .hero-unit h1{
@@ -399,20 +412,24 @@ text-decoration: none;
 .facebook-like-button-network {
 	width: 50px;
 	height: 70px;
-	overflow: hidden;
+	
 }
 
 .fb-container {
 	float: left;
 	width: 103px;
 	height: 130px;
-	border: 1px solid #2489CE;
+	border: 0;
+	border-bottom: 1px solid #eeeeee;
+	border-top: 1px solid whiteSmoke;
+ /*border: 1px solid #2489CE;*/
 	margin-right: 50px;
 	padding: 5px  5px 5px 5px;
 	background: #FFF;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
-  	border-radius: 0%     0%     25%     25% /     0%     0%     3%     3%;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.25), 0 0 90px rgba(0,0,0,0.1) inset;
+ /* border-radius: 0%     0%     25%     25% /     0%     0%     3%     3%;*/
 }
+
 
 .fb-page-credits {
 	width: 80px;
@@ -421,6 +438,19 @@ text-decoration: none;
 .social-buttons-container {
 	width: 495px;
 	margin: 0 auto;
+}
+#facebook-instructions-container{
+	width: 495px;
+	margin: 0px auto;
+}
+#facebook-instructions-container h4{
+	font-family:"Pro",serif;
+	padding-top:110px;
+}
+#facebook-instructions-container .facebook-instructions-text{
+	font-family:"Pro",serif;
+	font-size:1em;
+	line-height:15px;
 }
 
 .hidden-div {
@@ -441,8 +471,38 @@ text-decoration: none;
 	margin-bottom:20px;
 }
 
+.terms{
+	margin-top:70px;
+	text-align:justify;
+	font-family:"Pro",serif;
+}
+
+.term-link{
+	color:#145072;
+	text-decoration:none;
+}
+
+.agree-page-title{
+	text-align:justify;
+	margin-left:75px;
+}
+.agree-title{
+	text-align:justify;
+	margin-left:75px;
+	margin-bottom:10px;
+}
+.agree-text{
+	text-align:justify;
+	margin-left:100px;
+	margin-right:100px;
+	margin-top:10px;
+	font-family:"Pro", serif;
+}
+
 // Media Query Start - SKIP
 // Place at the end of the file
+	
+	
 	@media only screen and (min-width: 1301px) and (max-width: 1500px){
 	
 	.counter-cell{
@@ -462,6 +522,8 @@ text-decoration: none;
 		right:150px;
 		top:90px;
 	}
+	
+	
 	#graphic{
 		min-height:400px;
 	}
@@ -571,6 +633,10 @@ text-decoration: none;
 		top:90px;
 	}
 	
+	#arrow-facebook-points{
+	display:none;
+	}
+	
 	}
 	
 	@media only screen and (min-width: 901px) and (max-width: 1000px){
@@ -601,6 +667,10 @@ text-decoration: none;
 		top:90px;
 	}
 	
+	#arrow-facebook-points{
+	display:none;
+	}
+	
 	}
 	
 	@media only screen and (min-width: 801px) and (max-width: 900px){
@@ -625,9 +695,18 @@ text-decoration: none;
 		top:90px;
 	}
 	
+	#arrow-facebook-points{
+	display:none;
+	}
+	
 	}
 	
 	@media only screen and (max-width: 800px){
+	
+	#arrow-facebook-points{
+	display:none;
+	}
+	
 	.counter-cell{
 	height:24px;
 	}
@@ -659,6 +738,16 @@ text-decoration: none;
 	font-family:"Pro",serif;
 	margin-top:5%;
 	color:white;
+	}
+	
+	}
+	
+	@media only screen and (min-width: 1501px) and (max-width:2000px){
+	
+	#arrow-facebook-points{
+	position:absolute;
+	top:180px;
+	right:35%;
 	}
 	
 	}

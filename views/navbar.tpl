@@ -23,7 +23,7 @@
 					{if !$user.is_loggedin}
 						<a href="#" class="btn no-border-radius" id="login">Login</a>&nbsp;<a href="#" class="btn btn-inverse no-border-radius" id="register">Register</a>
 					{else}
-						<a href="#" class="btn btn-success no-border-radius">{$user.user_credits|number_format} Credits</a>
+						<a href="#" class="btn btn-success no-border-radius"><span id="user-credits">{$user.user_credits}</span> Credits</a>
 						<a href="{$URL}account/logout/" class="btn no-border-radius">Logout [{$user.user_name}]</a>
 					{/if}
 				</p>

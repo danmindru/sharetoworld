@@ -50,6 +50,27 @@ class dbClicks {
 		                  
 		return $db->db_num_rows($result) ? true : false;
 	}
+	
+	/**
+	 * Check if a Twitter Click exists
+	 * @param string $twitter_id
+	 * @param int $user_id
+	 * 
+	 * @return bool
+	 */
+	public static function twitter_exists($twitter_id, $user_id) {
+		$db = db::get_instance();
+		
+		$query = sprintf("SELECT * 
+		                  FROM users_clicks
+		                  WHERE `twitter_id` = '%s' AND `user_id` = '%s'",
+		                  $db->db_escape($twitter_id),
+						  $db->db_escape($user_id));
+		
+		$result = $db->db_query($query);
+		                  
+		return $db->db_num_rows($result) ? true : false;
+	}
 }
 
 ?>

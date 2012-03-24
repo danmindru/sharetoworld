@@ -423,6 +423,10 @@ text-decoration: none;
 	margin: 0 auto;
 }
 
+.hidden-div {
+	display: none;
+}
+
 #social-tree {
 	width:416px;
 	margin:10px auto;

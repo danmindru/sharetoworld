@@ -4,6 +4,7 @@ require_once(FUNCTIONS_DIR 	. 'validate.php');
 require_once(DB_DIR 		. "sessions.php");
 require_once(DB_DIR 		. "users.php");
 require_once(DB_DIR 		. "facebook.php");
+require_once(DB_DIR 		. "twitter.php");
 
 
 /**
@@ -44,10 +45,10 @@ class networks implements IController {
 		
 		$user->loggedin_required();
 		
-		$pages 	= dbFacebook::get_all_for_user($user->get_user_id());
+		$pages 	= dbTwitter::get_all_for_user($user->get_user_id());
 		
 		$view  	= new View();
-		$view	->assign('facebook', $pages);
+		$view	->assign('twitter', $pages);
 		$result = $view->fetch('networks/twitter.tpl');
 		$front->setBody($result);
 	}

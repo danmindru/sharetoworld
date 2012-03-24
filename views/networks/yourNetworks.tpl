@@ -20,7 +20,6 @@
 			total 			= eval(total + "+" + myOptions[1]);
 		
 			$( "#user-credits" ).fadeIn(2000).text(total);
-			//$('[data-href="' + href + '"]').remove();
 			$('[id="fbpage' + myOptions[0] + '"]').remove();
 			$.get( "{/literal}{$URL}cpanel/facebookLike/{literal}", { url: href, ref: myOptions[0] } );
 			

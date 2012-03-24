@@ -34,9 +34,11 @@ class account implements IController {
 		if (request_is_post()) {
 			//Form submited. Process login request
 			try {
+					
 				//Check if fields are empty
 				if ($_POST['user_name'] == '' || $_POST['password'] == '') {
-					throw new Exception('All fields are required.');
+					flash_error('All fields are required');
+					redirect('');
 				}
 				
 				$user = array();
@@ -46,12 +48,13 @@ class account implements IController {
 				$check = $wp_hasher->CheckPassword(mysql_real_escape_string($_POST['password']), $user["user_password"]);
 				
 				if($check == false) {
-					flash_error('Invalid combination between username and password');
-					redirect();
+					flash_warning('Invalid combination between username and password');
+					redirect('');
 				}
 				
 				if ($user['user_type'] == 'None') {
-					throw new Exception('Login failed. Account is inactive.');
+					flash_error('Login failed. Account is inactive.');
+					redirect('');
 				}
 				
 				//Delete session
@@ -70,17 +73,19 @@ class account implements IController {
 				//Redirect user to homepage
 				if (isset($_SESSION['login_referer']))
 				{
+					flash_success('Welcome back!');
 					redirect('');	
 				}
 				else if (isset($_SERVER['HTTP_REFERER']))
 				{
-					redirect(get_internal_page($_SERVER['HTTP_REFERER']));
+					flash_success('Welcome back!');
+					redirect('');
 				} else {
 					echo "System Error";die;
 				}
 				
 			} catch (Exception $e) {
-				redirect('account/login');
+				redirect('');
 			}			
 		} else 	{
 			$front = FrontController::get_instance();

@@ -4,6 +4,7 @@ require_once(FUNCTIONS_DIR 	. 'validate.php');
 require_once(DB_DIR 		. "sessions.php");
 require_once(DB_DIR 		. "users.php");
 require_once(DB_DIR 		. "facebook.php");
+require_once(DB_DIR 		. "twitter.php");
 require_once(DB_DIR 		. "clicks.php");
 
 
@@ -147,56 +148,56 @@ class cpanel implements IController {
 				}
 				
 				//Check if clicks value is number
-				if (!is_numeric($_POST['facebook_clicks'])) {
+				if (!is_numeric($_POST['twitter_clicks'])) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}
 				
 				//Check if clicks value is bigger than 100
-				if ($_POST['facebook_clicks'] > 100) {
+				if ($_POST['twitter_clicks'] > 100) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}
 				
 				//Check if points per click value is number
-				if (!is_numeric($_POST['facebook_points_per_click'])) {
+				if (!is_numeric($_POST['twitter_points_per_click'])) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}
 				
 				//Check if points per click value is bigger than 10
-				if ($_POST['facebook_points_per_click'] > 10) {
+				if ($_POST['twitter_points_per_click'] > 10) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}
 				
 				//Check if clicks * points per click
-				if (($_POST['facebook_points_per_click'] * $_POST['facebook_clicks']) > $user->get_user_credits()) {
+				if (($_POST['twitter_points_per_click'] * $_POST['twitter_clicks']) > $user->get_user_credits()) {
 					flash_error('You have only ' . $user->get_user_credits() . ' credits. Do not cheat! ;)');
 					redirect();	
 				}
 				
 				//Check if page is already registered by current user
-				if (dbFacebook::exists($_POST['facebook_url'], $user->get_user_id())) {
-					flash_error('You already registered this Facebook Page.');
+				if (dbTwitter::exists($_POST['twitter_url'], $user->get_user_id())) {
+					flash_error('You already registered this Twitter Account.');
 					redirect();					
 				}
 				
 				//Add page to database 
 				$data 								= array();
 				$data['user_id'] 					= $user->get_user_id();
-				$data['facebook_url']				= $_POST['facebook_url'];
-				$data['facebook_points_per_click']	= $_POST['facebook_points_per_click'];
-				$data['facebook_requested_clicks']	= $_POST['facebook_clicks'];
-				dbFacebook::create($data);
+				$data['twitter_url']				= $_POST['twitter_url'];
+				$data['twitter_points_per_follow']	= $_POST['twitter_points_per_click'];
+				$data['twitter_requested_follows']	= $_POST['twitter_clicks'];
+				dbTwitter::create($data);
 				
 				//Get the user's points for the page
 				$data					= array();
-				$data['user_credits']	= $user->get_user_credits() - ($_POST['facebook_points_per_click'] * $_POST['facebook_clicks']);				
+				$data['user_credits']	= $user->get_user_credits() - ($_POST['twitter_points_per_click'] * $_POST['twitter_clicks']);				
 				dbUsers::update($user->get_user_id(), $data);
 				
 				//Display creation confirmation message
-				flash_success('Your Facebook page was successfully registered.');
+				flash_success('Your Twitter Account was successfully registered.');
 				redirect();
 				
 			} catch (Exception $e) {
@@ -206,6 +207,39 @@ class cpanel implements IController {
 			}
 		}
 	}
-}
 
+	public function twitterFollow() {
+		$user	= User::get_instance();
+		
+		//Check if user is loggein
+		$user->loggedin_required();
+		
+		//Get the liked page
+		$page 	= dbTwitter::get_by_id($_GET['ref']); 
+		
+		if(!dbClicks::twitter_exists($page['twitter_id'], $user->get_user_id())) {
+			//Increase Page Clicks
+			$data						= array();
+			$data['twitter_follows'] 	= $page['twitter_follows'] + 1;
+			 
+			if( $data['twitter_follows'] >= $page['twitter_requested_follows'] ) {
+				//Disable page if it reached requested clicks
+				$data['twitter_status'] = 'disabled';
+			}
+			dbTwitter::update($page['twitter_id'], $data);
+			
+			//Create user click
+			$data					= array();
+			$data['twitter_id'] 	= $page['twitter_id'];
+			$data['user_id']		= $user->get_user_id();
+			$data['click_date']		= time();
+			dbClicks::create($data);
+			
+			//Add earned credits to user's credits
+			$data					= array();
+			$data['user_credits']	= $user->get_user_credits() + $page['twitter_points_per_follow'];
+			dbUsers::update($user->get_user_id(), $data);
+		}
+	}
+}
 ?>

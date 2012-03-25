@@ -54,7 +54,7 @@
 				<form class="well" action="{$URL}cpanel/addFacebook/" method="POST">
 					<label>Your URL</label>
 					<input type="text" class="span3" placeholder="Type your Facebook Page URL" name="facebook_url" />
-					<span class="help-inline">https://www.facebook.com/YourURL</span>
+					<span class="help-inline">http://www.yourURL.com</span>
 					<label>How many clicks would you like to get?
 					<a href="#" class="btn btn-info facebook-clicks-button">Clicks: <span id="facebook-total-clicks"></span></a>
 					<div id="facebook-slider-clicks"></div><br />
@@ -70,7 +70,7 @@
 				<form class="well" action="{$URL}cpanel/addTwitter/" method="POST">
 					<label>Your URL</label>
 					<input type="text" class="span3" placeholder="Type your Twitter Page URL" name="twitter_url" />
-					<span class="help-inline">http://www.twitter.com/YourURL</span>
+					<span class="help-inline">http://www.twitter.com/YourName</span>
 					<label>How many clicks would you like to get?
 					<a href="#" class="btn btn-info facebook-clicks-button">Clicks: <span id="twitter-total-clicks"></span></a>
 					<div id="twitter-slider-clicks"></div><br />

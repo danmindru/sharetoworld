@@ -48,7 +48,9 @@
 					{/if}
 				{/if}
 				
-				<div class="social-buttons-container">
+				{include file="socialtabs.tpl"}
+				
+				<div class="social-buttons-container twitter-container">
 					{foreach from=$twitter key=k item=page}
 						<div id="divid{$page.twitter_id}" class="fb-container" style="margin-bottom: 20px;">
 							<div id="{$page.twitter_id}/{$page.twitter_points_per_follow}" style="margin-left: 10px; margin-top: 10px;">
@@ -59,6 +61,14 @@
 						</div>
 					{/foreach}
 				</div>
+            
+            	<img id="arrow-twitter-points" src="{$URL_STATIC}img/arrow-facebook-points.png" alt="Get points by clicking the buttons"/>
+					
+				<div id="facebook-instructions-container" class="par-format-justify">
+					<h4>You Are One Click Away From Getting More Points</h4>
+					<p class="facebook-instructions-text">Follow a link in order to get the displayed credits.<br/>We will display only 6 buttons at the same time for faster loading.<br/>When you have clicked all of them, we will display 6 more!</p>
+				</div>
+            
             </div>
 		</div> 
 	</div>

@@ -64,6 +64,7 @@
 				            <p class="txt">Building a network has just got easy! 
 				            	The users of Share to World will be 
 				            	connecting with your page faster than you could ever begin to imagine.
+				            	
 				            	Take your page to a global scale, for free!</p>
 				            
 		               </div>

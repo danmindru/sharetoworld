@@ -1,7 +1,7 @@
 			<hr/>
 			<div class="row-fluid footer1 footer-background">
 				<div class="span3 bottom-link">
-					<a href="{$URL}about/about-us">About Share to World</a><br />
+					<a href="{$URL}about/aboutus">About Share to World</a><br />
 					<a href="{$URL}about/terms">Terms and Conditions</a><br />
 					<a href="{$URL}about/policy">Privacy Policy</a><br />
 					<a href="{$URL}about/contact">Contact Share to World</a><br />
@@ -9,28 +9,28 @@
 					<a href="{$URL}about/help">Help and Indications</a>
 				</div>
 				<div class="span3 bottom-link">
-					<a href="#">Facebook</a><br />
-					<a href="#">Twitter</a><br />
-					<a href="#">Google+</a><br />
-					<a href="#">LinkedIn</a><br />
-					<a href="#">Digg</a><br />
-					<a href="#">StubmelUpon</a>
+					<a href="{$URL}blog">Blog</a><br />
+					<a href="#">Increase Audience</a><br />
+					<a href="#">The New Web 3.0</a><br />
+					<a href="#">Social Networks</a><br />
+					<a href="#">STW user Guide</a><br />
+					<a href="#">Welcome to STW</a>
 				</div>
 				<div class="span3 bottom-link">
-					<a href="#">Facebook</a><br />
-					<a href="#">Twitter</a><br />
-					<a href="#">Google+</a><br />
-					<a href="#">LinkedIn</a><br />
-					<a href="#">Digg</a><br />
-					<a href="#">StubmelUpon</a>
+					<a href="http://www.facebook.com/pages/Share-To-World/136290376499043">STW Facebook</a><br />
+					<a href="https://twitter.com/#!/sharetoworld">STW Twitter</a><br />
+					<a href="http://delicious.com/sharetoworld">STW Delicious</a><br />
+					<a href="http://digg.com/sharetoworld/diggs">STW Digg</a><br />
+					<a href="http://www.stumbleupon.com/stumbler/sharetoworld">STW StubmelUpon</a><br />
+					<a href="http://pinterest.com/sharetoworld/">STW Pinterest</a>
 				</div>
 				<div class="span3 bottom-link">
-					<a href="#">Facebook</a><br />
-					<a href="#">Twitter</a><br />
-					<a href="#">Google+</a><br />
-					<a href="#">LinkedIn</a><br />
-					<a href="#">Digg</a><br />
-					<a href="#">StubmelUpon</a>
+					<a href="http://www.danielrosca.ro" target="_blank">Daniel Rosca</a><br />
+					<a href="http://www.mindrudan.com" target="_blank">Dan Mindru</a><br />
+					<a href="http://www.facebook.com/DanielRoscaPage" target="_blank">DanielRoscaPage</a><br />
+					<a href="http://www.facebook.com/MindruDanMultimedia" target="_blank">MindruDanMultimedia</a><br />
+					<a href="https://twitter.com/danielrosca" target="_blank">@danielrosca</a><br />
+					<a href="https://twitter.com/mindrudan" target="_blank">@mindrudan</a>
 				</div>
 				
 			</div>

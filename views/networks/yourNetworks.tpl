@@ -67,14 +67,14 @@
 					{/if}
 				{/if}
 				
-				
+				{include file="socialtabs.tpl"}
 				
 				<div class="social-buttons-container">
 					{foreach from=$facebook key=k item=page}
 						<div class="fb-container" id="fbpage{$page.facebook_id}">
-							<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="50" data-ref="{$page.facebook_id}/{$page.facebook_points_per_click}" data-show-faces="false" style="padding-left: 30px;"></div><br />
+							<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="50" data-ref="{$page.facebook_id}/{$page.facebook_points_per_click}" data-show-faces="false" style="padding-left: 30px; overflow:hidden;"></div><br />
 							<a href="#" class="btn btn-success no-border-radius fb-page-credits">{$page.facebook_points_per_click} Credits</a><br />
-							<a href="{$page.facebook_url}" class="btn btn-info no-border-radius fb-page-credits">View Page</a>
+							<a href="{$page.facebook_url}" target="_blank" class="btn btn-info no-border-radius fb-page-credits">View Page</a>
 						</div>
 					{/foreach}
 				</div>

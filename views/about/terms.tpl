@@ -58,11 +58,11 @@
 			<h2 class="agree-title">5. Modifications and Terminations</h2>
 			<p class="agree-text">These terms and conditions may change from time to time. If such changes are made, they will be effective immediately, and we will notify you by a notice posted on our website home page of the changes that have been made. If you disagree with the changes that have been made, you should not use our website.
 			<br/>
-			We may terminate these terms and conditions of use for any reason and at any time without notice to you. If you are concerned about these terms and conditions of use, you should read them each time before you use our website. Any questions or concerns should be brought to our attention by sending an e-mail to mindrudan[at]gmail.com, and providing us with information relating to your concern.
+			We may terminate these terms and conditions of use for any reason and at any time without notice to you. If you are concerned about these terms and conditions of use, you should read them each time before you use our website. Any questions or concerns should be brought to our attention by sending an e-mail to mindrudan[at]gmail.com or daniel.rosca.xdh[at]gmail.com , and providing us with information relating to your concern.
 			</p>
 			
 			<h2 class="agree-title">6. Obscene and Offensive Content</h2>
-			<p class="agree-text">We are not responsible for any obscene or offensive content that you receive or view from others while using our website. However, if you do receive or view such content, please contact us by e-mail to mindrudan[at]gmail.com so that we can investigate the matter. Although we are not obligated to do so, we reserve the right to monitor, investigate, and remove obscene or offensive material posted to our website.</p>
+			<p class="agree-text">We are not responsible for any obscene or offensive content that you receive or view from others while using our website. However, if you do receive or view such content, please contact us by e-mail to mindrudan[at]gmail.com or daniel.rosca.xdh[at]gmail.com  so that we can investigate the matter. Although we are not obligated to do so, we reserve the right to monitor, investigate, and remove obscene or offensive material posted to our website.</p>
 			</p>
 			
 			<h2 class="agree-title">7. Severability of These Terms and Conditions</h2>
@@ -74,7 +74,7 @@
 			</p>
 			
 			<h2 class="agree-title">9. Entire Agreement</h2>
-			<p class="agree-text">These terms and conditions, including the policies incorporated herein by express reference, constitute your entire agreement with us with respect to your use of our website. Any questions or concerns about these terms and conditions of use should be brought to our attention by e-mail to mindrudan[at]gmail.com, and providing us with information relating to your concern.</p>
+			<p class="agree-text">These terms and conditions, including the policies incorporated herein by express reference, constitute your entire agreement with us with respect to your use of our website. Any questions or concerns about these terms and conditions of use should be brought to our attention by e-mail to mindrudan[at]gmail.com or daniel.rosca.xdh[at]gmail.com , and providing us with information relating to your concern.</p>
 			</p>
 						
 		</div> 

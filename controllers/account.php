@@ -149,6 +149,11 @@ class account implements IController {
 					redirect();
 				}
 				
+				if($_POST['terms'] != "terms") {
+					flash_error('You must accept the Terms and Conditions.');
+					redirect();
+				}
+				
 				//Check if username already exist
 				if (dbUsers::exists($_POST['user_name'])) {
 					flash_error('Username is already registered.');

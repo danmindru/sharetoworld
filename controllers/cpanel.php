@@ -5,6 +5,7 @@ require_once(DB_DIR 		. "sessions.php");
 require_once(DB_DIR 		. "users.php");
 require_once(DB_DIR 		. "facebook.php");
 require_once(DB_DIR 		. "twitter.php");
+require_once(DB_DIR 		. "google.php");
 require_once(DB_DIR 		. "clicks.php");
 
 
@@ -239,6 +240,81 @@ class cpanel implements IController {
 			$data					= array();
 			$data['user_credits']	= $user->get_user_credits() + $page['twitter_points_per_follow'];
 			dbUsers::update($user->get_user_id(), $data);
+		}
+	}
+
+	public function addGoogle() {
+		$front 	= FrontController::get_instance();	
+		$user   = User::get_instance();	
+		
+		if (request_is_post()) {
+			//Process new account creation request
+			try {
+				//Check if all fields are filled
+				if (exist_empty_fields($_POST)) {
+					flash_warning('All fields are required.');
+					redirect();
+				}
+				
+				//Check if clicks value is number
+				if (!is_numeric($_POST['google_clicks'])) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
+				//Check if clicks value is bigger than 100
+				if ($_POST['google_clicks'] > 100) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
+				//Check if points per click value is number
+				if (!is_numeric($_POST['google_points_per_click'])) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
+				//Check if points per click value is bigger than 10
+				if ($_POST['google_points_per_click'] > 10) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
+				//Check if clicks * points per click
+				if (($_POST['google_points_per_click'] * $_POST['google_clicks']) > $user->get_user_credits()) {
+					flash_error('You have only ' . $user->get_user_credits() . ' credits. Do not cheat! ;)');
+					redirect();	
+				}
+				
+				//Check if page is already registered by current user
+				if (dbGoogle::exists($_POST['google_url'], $user->get_user_id())) {
+					flash_error('You already registered this Google Plus Account.');
+					redirect();					
+				}
+				
+				//Add page to database 
+				$data 								= array();
+				$data['user_id'] 					= $user->get_user_id();
+				$data['google_url']					= $_POST['google_url'];
+				$data['google_points_per_plus']	= $_POST['google_points_per_click'];
+				$data['google_requested_plus']	= $_POST['google_clicks'];
+				dbGoogle::create($data);
+				
+				//Get the user's points for the page
+				$data					= array();
+				$data['user_credits']	= $user->get_user_credits() - ($_POST['google_points_per_click'] * $_POST['google_clicks']);				
+				dbUsers::update($user->get_user_id(), $data);
+				
+				//Display creation confirmation message
+				flash_success('Your Google Plus Account was successfully registered.');
+				redirect();
+				
+			} catch (Exception $e) {
+				echo "eror";die;
+				//Flash error message if an error eccured
+				flash_error($e->getMessage());
+				redirect();
+			}
 		}
 	}
 }

@@ -28,7 +28,7 @@
 			console.log(page);
 			if(page == 3) {
 				//reload template
-				window.location.replace("{/literal}{$URL}networks/yournetworks/{literal}");
+				window.location.replace("{/literal}{$URL}networks/facebook/{literal}");
 			}
     	});
 	};

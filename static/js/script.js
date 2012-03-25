@@ -137,7 +137,7 @@ jQuery(document).ready(function($) {
 			creditsClass = false;	
 		}
 		
-			/* TWITTER Points Per Click Slider
+	/* TWITTER Points Per Click Slider
 	 * - give user permssion to choose a certain amount of points per click
 	 */
 		$( "#twitter-slider-points-per-click" ).slider({
@@ -197,6 +197,70 @@ jQuery(document).ready(function($) {
 		}
 		if( (($( "#twitter-slider-clicks" ).slider( "value" ) * $( "#twitter-slider-points-per-click" ).slider( "value" )) <= userCredits) && creditsClass == true) {
 			$( "#twitter-btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");
+			creditsClass = false;	
+		}
+
+
+	/* GOOGLE Points Per Click Slider
+	 * - give user permssion to choose a certain amount of points per click
+	 */
+		$( "#google-slider-points-per-click" ).slider({
+			range: "min",
+			value: 2,
+			min: 1,
+			max: 10,
+			slide: function( event, ui ) {
+				$( "#google-point-per-click" ).text( ui.value );
+				$( "#google-required-points" ).text( ui.value * $( "#twitter-slider-clicks" ).slider( "value" ) );
+				$( "#google_points_per_click" ).val( ui.value );
+				
+				if( (ui.value * $( "#google-slider-clicks" ).slider( "value" )) > userCredits) {
+					$( "#google-btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");
+					creditsClass = true;
+						
+				}
+				if( ((ui.value * $( "#google-slider-clicks" ).slider( "value" )) <= userCredits) && creditsClass == true) {
+					$( "#google-btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");	
+					creditsClass = false;
+				}
+			}
+		});
+		$( "#google-point-per-click" ).text( $( "#google-slider-points-per-click" ).slider( "value" ) );
+		$( "#google_points_per_click" ).val( $( "#google-slider-points-per-click" ).slider( "value" ) );
+	
+	/* GOOGLE Clicks Slider
+	 * - give user permssion to choose total number of clicks
+	 */
+		$( "#google-slider-clicks" ).slider({
+			range: "min",
+			value: 1,
+			min: 10,
+			max: 100,
+			slide: function( event, ui ) {
+				$( "#google-total-clicks" ).text( ui.value );		
+				$( "#google-required-points" ).text( ui.value * $( "#google-slider-points-per-click" ).slider( "value" ) );
+				$( "#google_clicks" ).val( ui.value );
+				
+				if( (ui.value * $( "#google-slider-points-per-click" ).slider( "value" )) > userCredits) {
+					$( "#google-btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");
+					creditsClass = true;	
+				}
+				if( ((ui.value * $( "#google-slider-points-per-click" ).slider( "value" )) <= userCredits)  && creditsClass == true) {
+					$( "#google-btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");	
+					creditsClass = false;
+				}
+			}
+		});
+		$( "#google-total-clicks" ).text( $( "#google-slider-clicks" ).slider( "value" ) );
+		$( "#google-required-points" ).text( $( "#google-slider-clicks" ).slider( "value" ) * $( "#google-slider-points-per-click" ).slider( "value" ) );
+		$( "#google_clicks" ).val( $( "#google-slider-clicks" ).slider( "value" ) );
+		
+		if( ($( "#google-slider-clicks" ).slider( "value" ) * $( "#google-slider-points-per-click" ).slider( "value" )) > userCredits) {
+			$( "#google-btn-required-pronts" ).removeClass("btn-success").addClass("btn-danger");	
+			creditsClass = true;
+		}
+		if( (($( "#google-slider-clicks" ).slider( "value" ) * $( "#google-slider-points-per-click" ).slider( "value" )) <= userCredits) && creditsClass == true) {
+			$( "#google-btn-required-pronts" ).removeClass("btn-danger").addClass("btn-success");
 			creditsClass = false;	
 		}
 		

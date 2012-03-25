@@ -55,15 +55,16 @@
 					<label>Your URL</label>
 					<input type="text" class="span3" placeholder="Type your Facebook Page URL" name="facebook_url" />
 					<span class="help-inline">http://www.yourURL.com</span>
-					<label>How many clicks would you like to get?
-					<a href="#" class="btn btn-info facebook-clicks-button">Clicks: <span id="facebook-total-clicks"></span></a>
+					<label>How many likes would you like to get?
+					<a href="#" class="btn btn-info facebook-clicks-button">Likes: <span id="facebook-total-clicks"></span></a>
+
 					<div id="facebook-slider-clicks"></div><br />
-					<label>How many credits per click?</label>
+					<label>How many credits per like?</label>
 					<div id="facebook-slider-points-per-click"></div>
 					<hr />
 					<input type="hidden" id="facebook_clicks" name="facebook_clicks" value="" />
 					<input type="hidden" id="facebook_points_per_click" name="facebook_points_per_click" value="" />
-					<a href="#" class="btn btn-info no-border-radius facebook-credits-click-button">Credits per click: <span id="facebook-point-per-click"></span></a><a href="#" id="facebook-btn-required-pronts" class="btn btn-success no-border-radius facebook-credits-required">You need: <span id="facebook-required-points"></span></a><a href="#" class="btn btn-info no-border-radius facebook-credits-own">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button>
+					<a href="#" class="btn btn-info no-border-radius facebook-credits-click-button">Credits per like: <span id="facebook-point-per-click"></span></a><a href="#" id="facebook-btn-required-pronts" class="btn btn-success no-border-radius facebook-credits-required">You need: <span id="facebook-required-points"></span></a><a href="#" class="btn btn-info no-border-radius facebook-credits-own">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button>
 				</form>
 			</div>
 			<div class="social-form" id="social-twitter-form">
@@ -71,21 +72,31 @@
 					<label>Your URL</label>
 					<input type="text" class="span3" placeholder="Type your Twitter Page URL" name="twitter_url" />
 					<span class="help-inline">http://www.twitter.com/YourName</span>
-					<label>How many clicks would you like to get?
-					<a href="#" class="btn btn-info facebook-clicks-button">Clicks: <span id="twitter-total-clicks"></span></a>
+					<label>How many follows would you like to get?
+					<a href="#" class="btn btn-info facebook-clicks-button">Follows: <span id="twitter-total-clicks"></span></a>
 					<div id="twitter-slider-clicks"></div><br />
-					<label>How many credits per click?</label>
+					<label>How many credits per follow?</label>
 					<div id="twitter-slider-points-per-click"></div>
 					<hr />
 					<input type="hidden" id="twitter_clicks" name="twitter_clicks" value="" />
 					<input type="hidden" id="twitter_points_per_click" name="twitter_points_per_click" value="" />
-					<a href="#" class="btn btn-info no-border-radius facebook-credits-click-button">Credits per click: <span id="twitter-point-per-click"></span></a><a href="#" id="twitter-btn-required-pronts" class="btn btn-success no-border-radius facebook-credits-required">You need: <span id="twitter-required-points"></span></a><a href="#" class="btn btn-info no-border-radius facebook-credits-own">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button>
+					<a href="#" class="btn btn-info no-border-radius facebook-credits-click-button">Credits per follow: <span id="twitter-point-per-click"></span></a><a href="#" id="twitter-btn-required-pronts" class="btn btn-success no-border-radius facebook-credits-required">You need: <span id="twitter-required-points"></span></a><a href="#" class="btn btn-info no-border-radius facebook-credits-own">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button>
 				</form>
 			</div>
 			<div class="social-form" id="social-google-form">
-				<form class="well">
-					<label>Google</label>
-					<button type="submit" class="btn">Submit</button>
+				<form class="well" action="{$URL}cpanel/addGoogle/" method="POST">
+					<label>Your URL</label>
+					<input type="text" class="span3" placeholder="Type your Google Plus Page URL" name="google_url" />
+					<span class="help-inline">http://www.YourURL</span>
+					<label><span class="question-text">How many Plus One would you like to get?</span>
+					<a href="#" class="btn btn-info facebook-clicks-button">Plus One: <span id="google-total-clicks"></span></a><br /><br />
+					<div id="google-slider-clicks"></div><br />
+					<label>How many credits per Plus One?</label>
+					<div id="google-slider-points-per-click"></div>
+					<hr />
+					<input type="hidden" id="google_clicks" name="google_clicks" value="" />
+					<input type="hidden" id="google_points_per_click" name="google_points_per_click" value="" />
+					<a href="#" class="btn btn-info no-border-radius facebook-credits-click-button">Credits per +1: <span id="google-point-per-click"></span></a><a href="#" id="google-btn-required-pronts" class="btn btn-success no-border-radius facebook-credits-required">You need: <span id="google-required-points"></span></a><a href="#" class="btn btn-info no-border-radius facebook-credits-own">You have {$user.user_credits|number_format}</a><button type="submit" class="btn no-border-radius" style="margin-left: 25px; margin-top: -15px;">Submit</button>
 				</form>
 			</div>
 			<div class="social-form" id="social-linkedin-form">

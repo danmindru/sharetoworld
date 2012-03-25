@@ -25,7 +25,7 @@ class networks implements IController {
 		$front->setBody($result);
 	}
 	
-	public function yournetworks() {
+	public function facebook() {
 		$front 	= FrontController::get_instance();	
 		$user   = User::get_instance();	
 		
@@ -35,7 +35,7 @@ class networks implements IController {
 		
 		$view  	= new View();
 		$view	->assign('facebook', $pages);
-		$result = $view->fetch('networks/yourNetworks.tpl');
+		$result = $view->fetch('networks/facebook.tpl');
 		$front->setBody($result);
 	}
 	

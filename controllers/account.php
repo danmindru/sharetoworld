@@ -170,14 +170,23 @@ class account implements IController {
 				$wp_hasher 	= new PasswordHash(8, TRUE);
 				$password 	= $wp_hasher->HashPassword($_POST['password']);
 				
-				$user['user_type'] 			= 'User';
-				$user['user_name'] 			= $_POST['user_name'];
-				$user['user_password'] 		= $password;
-				$user['user_email'] 		= $_POST['email'];
-				$user['user_register_ip'] 	= get_user_ip();
+				$user['user_type'] 					= 'User';
+				$user['user_name'] 					= $_POST['user_name'];
+				$user['user_password'] 				= $password;
+				$user['user_email'] 				= $_POST['email'];
+				$user['user_country'] 				= $_POST['country'];
+				$user['user_confirmation_code'] 	= md5(time()) . '{' .rand(0,6666) . '}' . md5($_POST['email']);
+				$user['user_register_ip'] 			= get_user_ip();
 				
 				//Create user account
 				dbUsers::create($user);
+				
+				$to      = $_POST['email'];
+				$subject = 'Share To World - Account Activation';
+				$message = 'Your Activation Code is:' . $user["user_confirmation_code"] . '. You will have to enter it when you login for the first time.';
+				$headers = 'From: noreply@sharetoworld.com' . "\r\n" . 'Reply-To: webmaster@sharetoworld.com' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+				
+				mail($to, $subject, $message, $headers);
 				
 				//Display account creation confirmation message
 				flash_success('Your account was created. You may login.');
@@ -191,161 +200,42 @@ class account implements IController {
 		}
 	}
 	
-	public function edit () {
-		//Get user instance
-		$user = User::get_instance();
+	/**
+	 * Profile page
+	 */
+	public function profile () {
 		
-		if (request_is_post()) {			
+		if (request_is_post()) {
+			//Process new account creation request
 			try {
 				//Check if all fields are filled
 				if (exist_empty_fields($_POST)) {
-					throw new Exception('All fields are required.');
+					flash_warning('All fields are required.');
+					redirect();
 				}
 				
+				$user['user_first_name'] 			= $_POST['firstname'];
+				$user['user_last_name'] 			= $_POST['lastname'];
+				$user['user_website'] 				= $_POST['website'];
+				$user['user_confirmation_code'] 	= $_POST['confirmation_code'];
 				
-				$images 		= array('image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7', 'image8', 'image9', 'image10');
-				$savedImages 	= array();
+				//Update user' account
+				dbUsers::update($user);
 				
-				foreach ($images as $img) {
-					//reads the name of the file the user submitted for uploading
-				 	$image = $_FILES[$img]['name'];
-				 	//if it is not empty
-				 	if ($image) 
-				 	{
-					 	//get the original name of the file from the clients machine
-				 		$filename 	= stripslashes($image);
-					 	//get the extension of the file in a lower case format
-				  		$extension 	= getExtension($filename);
-				 		$extension 	= strtolower($extension);
-					 	//if it is not a known extension, we will suppose it is an error and will not  upload the file,  
-						//otherwise we will do more tests
-					 	if (($extension != "jpg") && ($extension != "jpeg") && ($extension != "png") && ($extension != "gif")) 
-				 		{
-							throw new Exception('Unknown image type.');
-				 		}
-				 		else
-				 		{
-							 //get the size of the image in bytes
-							 //$_FILES[$img]['tmp_name'] is the temporary filename of the file
-							 //in which the uploaded file was stored on the server
-							 $size = filesize($_FILES[$img]['tmp_name']);
-				
-							//compare the size with the maxim size we defined and print error if bigger
-							if ($size > MAX_SIZE*1024)
-							{
-								throw new Exception('You have exceeded the size limit!');
-							}
-				
-							//we will give an unique name, for example the time in unix time format
-							$rand 		= rand(0, 1000000);
-							$image_name = $rand . time().'.'.$extension;
-							//the new name will be containing the full path where will be stored (images folder)
-							$newname	= ROOT_DIR . "static/images/uploads/" . $image_name;
-							
-							//we verify if the image has been uploaded, and print error instead
-							$copied = copy($_FILES[$img]['tmp_name'], $newname);
-							
-							if (!$copied) 
-							{
-								throw new Exception('Copy unsuccessfull!');
-							}
-							
-							//Add watermark
-							$logo = URL_STATIC . 'images/logo.png';
-							watermark($newname, $logo, $newname);
-							
-							//Create thumbnail
-							$thumb_address = ROOT_DIR . "static/images/uploads/thumbs/" . $image_name;
-							redimensionare_poza($newname, $thumb_address, 100, 90, 60);
-
-							//Create profile-thumbnail
-							$destination = ROOT_DIR . "static/images/uploads/profile/" . $image_name;
-							profile_picture($newname, 140, 105, $destination);
-							
-							//Add name to profile-thumbnail
-							$spacer = ROOT_DIR . "static/images/name.jpg";
-							write_name($destination, $spacer, $_POST['name'], $destination);
-							
-							$savedImages[] = $image_name;
-				 		}
-				 	}
-				}
-				
-				//Get user id
-				$user_id = $user->get_user_id();
-				
-				$profileImage = 0;
-				
-				//Add images
-				foreach ($savedImages as $image) {
-					$data = array();
-					$data['user_id'] 	= $user_id;
-					$data['image_name'] = $image;
-					if($profileImage == 0) {
-						$profileImage = dbUsersImages::create($data);	
-					} else {
-						dbUsersImages::create($data);
-					}
-				}
-				
-				if(dbUsersProfile::exists($user_id)) {
-					$data = array();
-					$data['profile_name'] 			= $_POST['name'];
-					$data['profile_type'] 			= $_POST['type'];
-					$data['profile_age'] 			= $_POST['age'];
-					$data['profile_measurements'] 	= $_POST['measurements'];
-					$data['profile_hours'] 			= $_POST['hours'];
-					$data['profile_height'] 		= $_POST['height'];
-					$data['profile_weight'] 		= $_POST['weight'];
-					$data['profile_sector'] 		= $_POST['sector'];
-					$data['profile_attention'] 		= $_POST['attention'];
-					$data['profile_smoking'] 		= $_POST['smoking'];
-					$data['profile_phone'] 			= $_POST['phone'];
-					$data['profile_price'] 			= $_POST['price'];
-					$data['profile_approved'] 		= 0;
-					dbUsersProfile::update($user_id, $data);	
-				} else {
-					$data = array();
-					$data['user_id'] 				= $user_id;
-					$data['profile_name'] 			= $_POST['name'];
-					$data['profile_type'] 			= $_POST['type'];
-					$data['profile_age'] 			= $_POST['age'];
-					$data['profile_measurements'] 	= $_POST['measurements'];
-					$data['profile_hours'] 			= $_POST['hours'];
-					$data['profile_height'] 		= $_POST['height'];
-					$data['profile_weight'] 		= $_POST['weight'];
-					$data['profile_sector'] 		= $_POST['sector'];
-					$data['profile_attention'] 		= $_POST['attention'];
-					$data['profile_smoking'] 		= $_POST['smoking'];
-					$data['profile_phone'] 			= $_POST['phone'];
-					$data['profile_price'] 			= $_POST['price'];
-					$data['image_id'] 				= $profileImage;
-					$data['profile_approved'] 		= 0;
-					dbUsersProfile::create($data);
-				}
-				
-				//Display confirmation message
-				flash_success('Your profile was updated.');
-				redirect('account/edit/');
+				//Display account creation confirmation message
+				flash_success('Your profile was created.');
+				redirect();
 				
 			} catch (Exception $e) {
 				//Flash error message if an error eccured
 				flash_error($e->getMessage());
-				redirect('account/edit/');
+				redirect();
 			}
 		} else {
-			//Display form
-			$front	= FrontController::get_instance();
+			$front = FrontController::get_instance();
+	
 			$view  	= new View();
-			
-			$user_id = $user->get_user_id();
-			if(dbUsersProfile::exists($user_id)) {
-				$profile = dbUsersProfile::get_by_id($user_id);
-				
-				$view->assign('profile', $profile);
-			}
-			
-			$result = $view->fetch('account/edit.tpl');
+			$result = $view->fetch('account/profile.tpl');
 			$front->setBody($result);
 		}
 	}

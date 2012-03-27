@@ -17,7 +17,7 @@
 					<a href="#">Welcome to STW</a>
 				</div>
 				<div class="span3 bottom-link">
-					<a href="http://www.facebook.com/pages/Share-To-World/136290376499043">STW Facebook</a><br />
+					<a href="http://www.facebook.com/ShareToWorld">STW Facebook</a><br />
 					<a href="https://twitter.com/#!/sharetoworld">STW Twitter</a><br />
 					<a href="http://delicious.com/sharetoworld">STW Delicious</a><br />
 					<a href="http://digg.com/sharetoworld/diggs">STW Digg</a><br />

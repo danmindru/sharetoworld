@@ -25,14 +25,16 @@
 					<a href="http://pinterest.com/sharetoworld/">STW Pinterest</a>
 				</div>
 				<div class="span3 bottom-link">
-					<a href="#" target="_blank">Buy us a coffee</a><br />
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="height: 36px;">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="2MUKRWVQBMVUL">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
 					<a href="http://www.danielrosca.ro" target="_blank">Daniel Rosca</a><br />
 					<a href="http://www.mindrudan.com" target="_blank">Dan Mindru</a><br />
-					<a href="https://twitter.com/danielrosca" target="_blank">@danielrosca</a><br />
-					<a href="https://twitter.com/mindrudan" target="_blank">@mindrudan</a><br />
 					<a href="#" target="_blank">Help us improve</a>
 				</div>
-				
 			</div>
 			
 			<div class="row-fluid footer2 footer-background">

@@ -6,10 +6,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<a class="brand" href="#"><img class="logo" src="{$URL_STATIC}img/whitesmall.png" alt="Share The World"/></a>
+			<a class="brand" href="{$URL}"><img class="logo" src="{$URL_STATIC}img/whitesmall.png" alt="Share The World"/></a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="{$URL}">Home</a></li>
 					{if !$user.is_loggedin}
 						<li><a href="#" id="login-from-addpage">Add New Page +</a></li>
 					{else}

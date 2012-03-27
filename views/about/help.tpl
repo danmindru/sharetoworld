@@ -15,52 +15,70 @@
 			<br/>
 			You have to enter the correct information regarding Name, Password and Email. After you agree with our Terms and Conditions you can submit the form.
 			<br/>
+			<img src="{$URL_STATIC}img/read.png" alt="Register on Share to World" class="register-button"/>
+			<br/>
 			Now you have registered your account and you can login using the entered information.
 			</p>
 			
 			<h2 class="agree-title">Login</h2>
 			<p class="agree-text">
-			We log IP addresses, which are the locations of computers or networks on the Internet, and analyze them in order to improve the value of our site. We also collect aggregate numbers of page hits in order to track the popularity of certain pages and improve the value of our site. We do not gather, request, record, require, collect or track any Internet users’ Personal Information through these processes.
+			In order to login into your account you have to click on the button located next to the register : <img src="{$URL_STATIC}img/login-button.png" alt="Login on Share to World" class="help-button"/>
 			<br/>
-			We use cookies on our site. A “cookie” is a tiny text file that we store on your computer to customize your experience and support some necessary functions. We also may use cookies to better understand how our visitors use our site. Our cookies contain no Personal Information and are neither shared nor revealed to other sites. We do not look for or at other sites’ cookies on your computer.
+			<img src="{$URL_STATIC}img/login-form.png" alt="Login on Share to World" class="register-button"/>
 			<br/>
-			You also have choices with respect to cookies. By modifying your browser preferences, you can accept all cookies, be notified when a cookie is set, or reject all cookies. However, if you reject some or all cookies, your experience at our site and other sites throughout the World Wide Web may not be complete. Also, you would be unable to take advantage of personalized content delivery offered by other Internet sites or by us.
+			Enter the correct information and press login. 
+			<br/>
+			You will be redirected to your statistics page.
 			</p>
 			
 			<h2 class="agree-title">Tab Selection</h2>
 			<p class="agree-text">
-			We log IP addresses, which are the locations of computers or networks on the Internet, and analyze them in order to improve the value of our site. We also collect aggregate numbers of page hits in order to track the popularity of certain pages and improve the value of our site. We do not gather, request, record, require, collect or track any Internet users’ Personal Information through these processes.
+			You can navigate on the website by using the top menu. 
 			<br/>
-			We use cookies on our site. A “cookie” is a tiny text file that we store on your computer to customize your experience and support some necessary functions. We also may use cookies to better understand how our visitors use our site. Our cookies contain no Personal Information and are neither shared nor revealed to other sites. We do not look for or at other sites’ cookies on your computer.
+			<img src="{$URL_STATIC}img/navigation-bar.png" alt="Navigation on Share to World" class="register-button"/>
 			<br/>
-			You also have choices with respect to cookies. By modifying your browser preferences, you can accept all cookies, be notified when a cookie is set, or reject all cookies. However, if you reject some or all cookies, your experience at our site and other sites throughout the World Wide Web may not be complete. Also, you would be unable to take advantage of personalized content delivery offered by other Internet sites or by us.
+			You can view your profile details at any time by clicking on the "Statistics" button.
+			<br/>
+			You can see graphs, analyze how many clicks you received or how many links you have clicked.
+			<br/>
+			To add a new personal link, click on the "Add new page" button.
 			</p>
 			
 			<h2 class="agree-title">URL inserting</h2>
-			<h3 class="agree-title">Add Url on Facebook</h3>
-			<p class="agree-text">
-			We log IP addresses, which are the locations of computers or networks on the Internet, and analyze them in order to improve the value of our site. We also collect aggregate numbers of page hits in order to track the popularity of certain pages and improve the value of our site. We do not gather, request, record, require, collect or track any Internet users’ Personal Information through these processes.
-			<br/>
-			We use cookies on our site. A “cookie” is a tiny text file that we store on your computer to customize your experience and support some necessary functions. We also may use cookies to better understand how our visitors use our site. Our cookies contain no Personal Information and are neither shared nor revealed to other sites. We do not look for or at other sites’ cookies on your computer.
-			<br/>
-			You also have choices with respect to cookies. By modifying your browser preferences, you can accept all cookies, be notified when a cookie is set, or reject all cookies. However, if you reject some or all cookies, your experience at our site and other sites throughout the World Wide Web may not be complete. Also, you would be unable to take advantage of personalized content delivery offered by other Internet sites or by us.
-			</p>
-			<h3 class="agree-title">Add Url on Twitter</h3>
-			<p class="agree-text">
-			We log IP addresses, which are the locations of computers or networks on the Internet, and analyze them in order to improve the value of our site. We also collect aggregate numbers of page hits in order to track the popularity of certain pages and improve the value of our site. We do not gather, request, record, require, collect or track any Internet users’ Personal Information through these processes.
-			<br/>
-			We use cookies on our site. A “cookie” is a tiny text file that we store on your computer to customize your experience and support some necessary functions. We also may use cookies to better understand how our visitors use our site. Our cookies contain no Personal Information and are neither shared nor revealed to other sites. We do not look for or at other sites’ cookies on your computer.
-			<br/>
-			You also have choices with respect to cookies. By modifying your browser preferences, you can accept all cookies, be notified when a cookie is set, or reject all cookies. However, if you reject some or all cookies, your experience at our site and other sites throughout the World Wide Web may not be complete. Also, you would be unable to take advantage of personalized content delivery offered by other Internet sites or by us.
-			</p>
-			<h3 class="agree-title">Add Url on Google Plus</h3>
-			<p class="agree-text">
-			We log IP addresses, which are the locations of computers or networks on the Internet, and analyze them in order to improve the value of our site. We also collect aggregate numbers of page hits in order to track the popularity of certain pages and improve the value of our site. We do not gather, request, record, require, collect or track any Internet users’ Personal Information through these processes.
-			<br/>
-			We use cookies on our site. A “cookie” is a tiny text file that we store on your computer to customize your experience and support some necessary functions. We also may use cookies to better understand how our visitors use our site. Our cookies contain no Personal Information and are neither shared nor revealed to other sites. We do not look for or at other sites’ cookies on your computer.
-			<br/>
-			You also have choices with respect to cookies. By modifying your browser preferences, you can accept all cookies, be notified when a cookie is set, or reject all cookies. However, if you reject some or all cookies, your experience at our site and other sites throughout the World Wide Web may not be complete. Also, you would be unable to take advantage of personalized content delivery offered by other Internet sites or by us.
-			</p>
+				<h3 class="agree-title">Tab navigation</h3>
+				<p class="agree-text">
+				Clicking on the "Add new page" will open a new window where you can see how many credits you have available.
+				<br/>
+				<img src="{$URL_STATIC}img/add-new-page.png" alt="Add New Page on Share to World" class="register-button"/>
+				<br/>
+				You can select a social network by clicking the tabs on the left.
+				<br/>
+				By selecting a tab you will be able to insert a link.
+				<br/>
+				You can add the same link on more social networks (for example adding the website www.website.com on Google Plus on Facebook).
+				</p>
+				
+				<h3 class="agree-title">Add Url on Facebook</h3>
+				<p class="agree-text">
+				</p>
+				
+				<h3 class="agree-title">Add Url on Twitter</h3>
+				<p class="agree-text">
+				</p>
+				
+				<h3 class="agree-title">Add Url on Google Plus</h3>
+				<p class="agree-text">
+				</p>
+			
+			<h2 class="agree-title">Point System</h2>
+			
+			<h2 class="agree-title">Getting more points</h2>
+			
+				<h3 class="agree-title">Point Tabs</h3>
+				<p class="agree-text">
+				</p>
+			
+			<h2 class="agree-title">Other Tipsz</h2>
 			
 		</div> 
 	</div>

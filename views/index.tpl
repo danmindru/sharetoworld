@@ -61,11 +61,12 @@
 				            
 				            <img id="question" src="{$URL_STATIC}img/question-final.png" alt="Share to world social tree"/>
 				            <h5>What you get?</h5>
-				            <p class="txt">Building a network has just got easy! 
-				            	The users of Share to World will be 
-				            	connecting with your page faster than you could ever begin to imagine.
-				            	
-				            	Take your page to a global scale, for free!</p>
+				            <p class="txt">
+				            	The Share to World platform allows you to access a network formed by thousands of people across the globe.
+				            	We bring a new, fresh and professional way to connect people via social networks. 
+				            	It is the easiest way to connect your pages and increase the number of visits on your websites.
+				            	Register now and get facebook likes, twitter followers, pluse one's and much more.
+				            	</p>
 				            
 		               </div>
 		               
@@ -73,18 +74,25 @@
 		               		<img id="globe" src="{$URL_STATIC}img/planet-final.png" alt="Share to world social tree"/>
 				            <h5>Getting Global</h5>
 				            <p class="txt">The good part has just got a lot better. You will instantly have a potential 
-				            	audience formed by thousands of people. Each click you get connects you with all
-				            	of the target's friends and followers.</p>
+				            	audience formed not only by the your fans, but all of their connections as well. Each click you get can reach houndreds of people. 
+				            	Building a network has just got a lot easier! 
+				            	The users of Share to World will be connecting with your web page faster than you could ever imagine.
+				            	
+				            	
+				            	Take your page to a global scale, for free!</p>
 		               </div>
 	                	
 	                   <div class="span4 par-format-justify">  
 		                   	<img id="gift" src="{$URL_STATIC}img/gift-final.png" alt="Share to world social tree"/>
 		                   	<h5>No hidden pays</h5>
-				            <p class="txt">What do you have to do in order to get
-				            	access to this incredible service?
-				            	Just register and help others grow.
-				            	Each click you will give to others
-				            	is going to be in your advantage.</p>
+				            <p class="txt">What do you have to do in order to get access to this revolutionary service?
+				            	Just register and add as many links as you want.
+				            	Each click you will give is going to be in your advantage.
+				            	The more users and clicks, the faster you can build a network.
+				            	We don't have adds and do not charge you for our services.
+				            	Being active is the best way you can reward us. 
+				            	It will help you, us and others grow and build a network.
+				            	</p>
 		        	   </div>
 		        	   
 	               </div>

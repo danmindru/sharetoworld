@@ -123,7 +123,6 @@ a {
 	color-stop(0.91, #2d80ab)
 );
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d80ab', endColorstr='#47a2d9', GradientType=0);
-	*/
 }
 
 .footer2{
@@ -231,6 +230,7 @@ h3{
 	text-align:center;
 	font-family:'Pro',serif;
 	font-size:1.1em;
+	padding-left:10px;
 }
 
 
@@ -399,7 +399,9 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 
 
 .facebook-clicks-button {
-	float: right;
+	position:absolute;
+	right:21px;
+	top:93px;
 	color: #FFF;
 }
 
@@ -523,6 +525,13 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 .question-text {
 	padding-top: 10px;
 }
+
+.register-button{
+	margin-top:15px;
+	border:1px solid black;
+	margin-bottom:8px;
+}
+
 
 // Media Query Start - SKIP
 // Place at the end of the file

@@ -25,12 +25,12 @@
 					<a href="http://pinterest.com/sharetoworld/">STW Pinterest</a>
 				</div>
 				<div class="span3 bottom-link">
+					<a href="#" target="_blank">Buy us a coffee</a><br />
 					<a href="http://www.danielrosca.ro" target="_blank">Daniel Rosca</a><br />
 					<a href="http://www.mindrudan.com" target="_blank">Dan Mindru</a><br />
-					<a href="http://www.facebook.com/DanielRoscaPage" target="_blank">DanielRoscaPage</a><br />
-					<a href="http://www.facebook.com/MindruDanMultimedia" target="_blank">MindruDanMultimedia</a><br />
 					<a href="https://twitter.com/danielrosca" target="_blank">@danielrosca</a><br />
-					<a href="https://twitter.com/mindrudan" target="_blank">@mindrudan</a>
+					<a href="https://twitter.com/mindrudan" target="_blank">@mindrudan</a><br />
+					<a href="#" target="_blank">Help us improve</a>
 				</div>
 				
 			</div>

@@ -19,6 +19,10 @@ class networks implements IController {
 	 */
 	public function index() {
 		$front 	= FrontController::get_instance();
+		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		$view  	= new View();
 		$result = $view->fetch('networks/index.tpl');
@@ -30,6 +34,7 @@ class networks implements IController {
 		$user   = User::get_instance();	
 		
 		$user->loggedin_required();
+		$user->confirmed_required();	
 		
 		$pages 	= dbFacebook::get_all_for_user($user->get_user_id());
 		
@@ -44,6 +49,7 @@ class networks implements IController {
 		$user   = User::get_instance();	
 		
 		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		$pages 	= dbTwitter::get_all_for_user($user->get_user_id());
 		

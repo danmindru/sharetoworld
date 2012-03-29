@@ -71,10 +71,16 @@ class User implements ArrayAccess {
 			$user['user_name'] 		= $info['user_name'];
 			$user['user_credits'] 	= $info['user_credits'];
 			
+			
+			
 			if($info['user_type'] == 'administrator') {
 				$user['is_admin'] = true;	
 			} else if ($info['user_type'] == 'moderator') {
 				$user['is_moderator'] = true;	
+			} else if ($info['user_type'] == 'unconfirmed') {
+				$user['is_unconfirmed'] = true;
+			} else if ($info['user_type'] == 'user') {
+				$user['is_unconfirmed'] = false;
 			}
 					
 		} else {
@@ -83,6 +89,7 @@ class User implements ArrayAccess {
 			$user['is_loggedin'] = false;
 			$user['is_admin'] = false;
 			$user['is_moderator'] = false;
+			$user['is_unconfirmed'] = true;
 		}
 		
 		//Save new informations in class global variable
@@ -96,6 +103,15 @@ class User implements ArrayAccess {
      */
     public function is_loggedin () {
     	return $this->_user['is_loggedin'];
+    }
+	
+	/**
+     * Check if user is confirmed
+     * 
+     * @return bool
+     */
+    public function is_unconfirmed () {
+    	return $this->_user['is_unconfirmed'];
     }
     
     /**
@@ -155,6 +171,17 @@ class User implements ArrayAccess {
 		}	
     }
     
+	/**
+     * Check if user is loged confirmed
+     * If not redirect profile page
+     */
+    public function confirmed_required () {
+    	if ($this->is_unconfirmed()) {
+			flash_warning('Please complete your profile!');
+			redirect('account/profile');
+		}	
+    }
+	
 	/**
      * Check if user is logged out
      * If not redirect home page

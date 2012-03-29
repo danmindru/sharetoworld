@@ -114,6 +114,32 @@ function getExtension($str) {
 	return $ext;
 }
 
+function generate_string($length) {
+	
+	$small_letters 	= array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+	$big_letters 	= array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+	$numbers		= array("0","1","2","3","4","5","6","7","8","9");
+	$symbols		= array("!", "*");
+	
+	$string			= "";
+	
+	for($i = 0; $i < $length; $i++) {
+		$random 	= rand(1,7);
+		
+		if($random == 1 || $random == 5) {
+			$string .= $small_letters[rand(0, count($small_letters)-1)];
+		} else if ($random == 2 || $random == 6) {
+			$string .= $big_letters[rand(0, count($big_letters)-1)];
+		} else if ($random == 3 || $random == 7) {
+			$string .= $numbers[rand(0, count($numbers)-1)];
+		} else if ($random == 4) {
+			$string .= $symbols[rand(0, count($symbols)-1)];
+		}
+	}
+	
+	return $string;
+}
+
 function redimensionare_poza ($adresa_poza, $adresa_poza_prelucrata, $calitate, $latimea_maxima, $inaltimea_maxima, $proportional = true, $umplere = false, $culoare = array(255, 255, 255))  
 {
 	echo "redim";

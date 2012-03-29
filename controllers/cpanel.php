@@ -20,7 +20,11 @@ class cpanel implements IController {
 	 * Display home page
 	 */
 	public function index() {
-		$front 	= FrontController::get_instance();		
+		$front 	= FrontController::get_instance();
+		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();		
 		
 		$view  	= new View();
 		$result = $view->fetch('index.tpl');
@@ -30,6 +34,9 @@ class cpanel implements IController {
 	public function addFacebook() {
 		$front 	= FrontController::get_instance();	
 		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		if (request_is_post()) {
 			//Process new account creation request
@@ -103,9 +110,10 @@ class cpanel implements IController {
 
 	public function facebookLike() {
 		$user	= User::get_instance();
+		$user   = User::get_instance();	
 		
-		//Check if user is loggein
 		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		//Get the liked page
 		$page 	= dbFacebook::get_by_id($_GET['ref']); 
@@ -138,6 +146,9 @@ class cpanel implements IController {
 	public function addTwitter() {
 		$front 	= FrontController::get_instance();	
 		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		if (request_is_post()) {
 			//Process new account creation request
@@ -210,7 +221,10 @@ class cpanel implements IController {
 	}
 
 	public function twitterFollow() {
-		$user	= User::get_instance();
+		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		//Check if user is loggein
 		$user->loggedin_required();
@@ -246,6 +260,9 @@ class cpanel implements IController {
 	public function addGoogle() {
 		$front 	= FrontController::get_instance();	
 		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();
 		
 		if (request_is_post()) {
 			//Process new account creation request

@@ -24,16 +24,11 @@
 				</div>	
 					
 				<div id="profile-form">					
-					<form action="{$URL}account/profile/" method="POST">
-						<label>First Name</label>
-						<input type="text" class="span3" placeholder="First Name" name="firstname" />
-						<label>Last Name</label>
-						<input type="texxt" class="span3" placeholder="Last Name" name="lastname" />
-						<label>Website</label>
-						<input type="text" class="span3" placeholder="Your Website URL" name="website" />
-						<label>Activation Code</label>
-						<input type="text" class="span3" placeholder="Your Activation Code" name="confirmation_code" /><br />
-						<button type="submit" class="btn">Continue</button>
+					<form action="{$URL}account/resetPassword/" method="POST">
+						<label>Email</label>
+						<input type="text" class="span3" placeholder="Your email address" name="email" />
+						<span class="help-inline">Reseting your password will generate a random one. You will receive it by email in a few minutes.</span>
+						<button type="submit" class="btn">Reset Password</button>
 					</form>
 				</div>
             </div>

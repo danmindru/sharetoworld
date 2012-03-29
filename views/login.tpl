@@ -5,7 +5,7 @@
 		<label>Password</label>
 		<input type="password" class="span3" placeholder="&#149;&#149;&#149;&#149;&#149;&#149;" name="password" />
 		<button type="submit" class="btn">Login</button><br />
+		<span class="more-info">Forgot your password? <a href="{$URL}account/resetPassword" class="more-info-a">Click here!</a></span>
 		<span class="more-info">Don't have an account yet? <a href="#" class="more-info-a" id="register-from-login">Sign Up!</a></span>
-		
 	</form>
 </div>

@@ -78,7 +78,7 @@
 				<p class="agree-text">
 				</p>
 			
-			<h2 class="agree-title">Other Tipsz</h2>
+			<h2 class="agree-title">Other Tips</h2>
 			
 		</div> 
 	</div>

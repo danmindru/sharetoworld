@@ -88,10 +88,10 @@
 					<label>Your URL</label>
 					<input type="text" class="span3" placeholder="Type your Google Plus Page URL" name="google_url" />
 					<span class="help-inline">http://www.YourURL</span><br /><br />
-					<label><span class="question-text">How many Plus One would you like to get?</span>
+					<label><span class="question-text">How many plus ones would you like to get?</span>
 					<a href="#" class="btn btn-info facebook-clicks-button">Plus One: <span id="google-total-clicks"></span></a>
 					<div id="google-slider-clicks"></div><br /><br />
-					<label>How many credits per Plus One?</label>
+					<label>How many credits per plus one?</label>
 					<div id="google-slider-points-per-click"></div>
 					<hr />
 					<input type="hidden" id="google_clicks" name="google_clicks" value="" />

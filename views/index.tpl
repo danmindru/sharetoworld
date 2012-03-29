@@ -77,8 +77,6 @@
 				            	audience formed not only by the your fans, but all of their connections as well. Each click you get can reach houndreds of people. 
 				            	Building a network has just got a lot easier! 
 				            	The users of Share to World will be connecting with your web page faster than you could ever imagine.
-				            	
-				            	
 				            	Take your page to a global scale, for free!</p>
 		               </div>
 	                	

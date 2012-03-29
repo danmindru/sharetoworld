@@ -1,12 +1,13 @@
 			<hr/>
 			<div class="row-fluid footer1 footer-background">
 				<div class="span3 bottom-link">
+					<a href="{$URL}about/help">Help and Indications</a><br />
 					<a href="{$URL}about/aboutus">About Share to World</a><br />
 					<a href="{$URL}about/terms">Terms and Conditions</a><br />
 					<a href="{$URL}about/policy">Privacy Policy</a><br />
 					<a href="{$URL}about/contact">Contact Share to World</a><br />
-					<a href="{$URL}about/faq">Frequently Asked Questions</a><br />
-					<a href="{$URL}about/help">Help and Indications</a>
+					<a href="{$URL}about/faq">Frequently Asked Questions</a>
+					
 				</div>
 				<div class="span3 bottom-link">
 					<a href="{$URL}blog">Blog</a><br />
@@ -25,7 +26,7 @@
 					<a href="http://pinterest.com/sharetoworld/">STW Pinterest</a>
 				</div>
 				<div class="span3 bottom-link">
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="height: 36px;">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="height: 36px; width:300px;">
 						<input type="hidden" name="cmd" value="_s-xclick">
 						<input type="hidden" name="hosted_button_id" value="2MUKRWVQBMVUL">
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">

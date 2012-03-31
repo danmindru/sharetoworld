@@ -296,6 +296,12 @@ h5{
 	right:28%;
 }
 
+.container-fluid .contact-image{
+	text-align:center;
+}
+
+
+
 #arrow-facebook-tabs{
 	position:absolute;
 	top:290px;
@@ -565,6 +571,11 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 .flash-message-align {
 	text-align: center;
 	margin-bottom: 20px;
+}
+
+.contact-info{
+	width:670px;
+	margin:0 auto;
 }
 
 // Media Query Start - SKIP

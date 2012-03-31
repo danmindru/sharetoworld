@@ -6,17 +6,39 @@
  
 <div class="container-fluid">
 	<div class="row-fluid">
-		<div class="span12 terms">
-			<h1 class="agree-page-title">Contact</h1>
+		<div class="span12 terms contact-info">
 			
-			<h2 class="agree-title">Browser information collected on the web site:</h2>
-			<p class="agree-text">
-			We log IP addresses, which are the locations of computers or networks on the Internet, and analyze them in order to improve the value of our site. We also collect aggregate numbers of page hits in order to track the popularity of certain pages and improve the value of our site. We do not gather, request, record, require, collect or track any Internet users’ Personal Information through these processes.
-			<br/>
-			We use cookies on our site. A “cookie” is a tiny text file that we store on your computer to customize your experience and support some necessary functions. We also may use cookies to better understand how our visitors use our site. Our cookies contain no Personal Information and are neither shared nor revealed to other sites. We do not look for or at other sites’ cookies on your computer.
-			<br/>
-			You also have choices with respect to cookies. By modifying your browser preferences, you can accept all cookies, be notified when a cookie is set, or reject all cookies. However, if you reject some or all cookies, your experience at our site and other sites throughout the World Wide Web may not be complete. Also, you would be unable to take advantage of personalized content delivery offered by other Internet sites or by us.
-			</p>
+			<div class="contact-image" style="margin-top:100px;">
+				<img src="{$URL_STATIC}img/sharetoworld-contact-banner.png" alt="Share to World Logo"/>
+			</div>
+			
+			<div class="contact-info">
+				<!-- <h1 class="agree-page-title">Contact</h1> -->
+				<br/>
+				<h2 class="agree-title">Send a message to Share to World</h2>
+				
+				
+				<p class="agree-text">
+					Please contact us only requesting information relevant to the share to world website.
+					<br/>
+					You can contact us by mail at <a class="term-link" href="#">contact@sharetoworld.com</a>
+					<br/>
+					We will do our best to reply as soon as possible.
+				</p>
+				
+				<br/>
+				
+				<p class="agree-text">
+					You can also find us on :
+					<br/>
+					<a href="http://www.facebook.com/ShareToWorld"><img src="{$URL_STATIC}img/icons/facebook-icon.png" alt="Share to World on Facebook"/></a>
+					<a href="https://twitter.com/#!/sharetoworld"><img src="{$URL_STATIC}img/icons/twitter-icon.png" alt="Share to World on Twitter"/></a>
+					<a href="http://digg.com/sharetoworld/diggs"><img src="{$URL_STATIC}img/icons/digg-icon.png" alt="Share to World on Digg"/></a>
+					<a href="http://www.stumbleupon.com/stumbler/sharetoworld"><img src="{$URL_STATIC}img/icons/stumbleupon-icon.png" alt="Share to World on StumbeUpon"/></a>
+					<a href="http://delicious.com/sharetoworld"><img src="{$URL_STATIC}img/icons/delicious-icon.png" alt="Share to World on Delicious"/></a>
+					<a href="http://pinterest.com/sharetoworld/"><img src="{$URL_STATIC}img/icons/pinterest-icon.png" alt="Share to World on Pinterest"/></a>
+				</p>
+			</div>
 		</div> 
 	</div>
 </div>

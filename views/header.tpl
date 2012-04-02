@@ -25,8 +25,8 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			  })();
 			  
-			  //user credits
-			  var userCredits = {/literal}{$user.user_credits}{literal};
+			  var userCredits 	= {/literal}{$user.user_credits}{literal};
+			  var userLevel 	= {/literal}{$user.user_level}{literal};
 		  	{/literal}
 		</script>
 	</head>

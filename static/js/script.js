@@ -79,9 +79,9 @@ jQuery(document).ready(function($) {
 	 */
 		$( "#facebook-slider-points-per-click" ).slider({
 			range: "min",
-			value: 2,
+			value: 1,
 			min: 1,
-			max: 10,
+			max: userLevel,
 			slide: function( event, ui ) {
 				$( "#facebook-point-per-click" ).text( ui.value );
 				$( "#facebook-required-points" ).text( ui.value * $( "#facebook-slider-clicks" ).slider( "value" ) );
@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
 		$( "#facebook-slider-clicks" ).slider({
 			range: "min",
 			value: 1,
-			min: 10,
+			min: 1,
 			max: 100,
 			slide: function( event, ui ) {
 				$( "#facebook-total-clicks" ).text( ui.value );		
@@ -142,9 +142,9 @@ jQuery(document).ready(function($) {
 	 */
 		$( "#twitter-slider-points-per-click" ).slider({
 			range: "min",
-			value: 2,
+			value: 1,
 			min: 1,
-			max: 10,
+			max: userLevel,
 			slide: function( event, ui ) {
 				$( "#twitter-point-per-click" ).text( ui.value );
 				$( "#twitter-required-points" ).text( ui.value * $( "#twitter-slider-clicks" ).slider( "value" ) );
@@ -170,7 +170,7 @@ jQuery(document).ready(function($) {
 		$( "#twitter-slider-clicks" ).slider({
 			range: "min",
 			value: 1,
-			min: 10,
+			min: 1,
 			max: 100,
 			slide: function( event, ui ) {
 				$( "#twitter-total-clicks" ).text( ui.value );		
@@ -206,9 +206,9 @@ jQuery(document).ready(function($) {
 	 */
 		$( "#google-slider-points-per-click" ).slider({
 			range: "min",
-			value: 2,
+			value: 1,
 			min: 1,
-			max: 10,
+			max: userLevel,
 			slide: function( event, ui ) {
 				$( "#google-point-per-click" ).text( ui.value );
 				$( "#google-required-points" ).text( ui.value * $( "#twitter-slider-clicks" ).slider( "value" ) );
@@ -234,7 +234,7 @@ jQuery(document).ready(function($) {
 		$( "#google-slider-clicks" ).slider({
 			range: "min",
 			value: 1,
-			min: 10,
+			min: 1,
 			max: 100,
 			slide: function( event, ui ) {
 				$( "#google-total-clicks" ).text( ui.value );		

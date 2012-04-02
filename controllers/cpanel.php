@@ -3,10 +3,11 @@
 require_once(FUNCTIONS_DIR 	. 'validate.php');
 require_once(DB_DIR 		. "sessions.php");
 require_once(DB_DIR 		. "users.php");
+require_once(DB_DIR 		. "levels.php");
+require_once(DB_DIR 		. "clicks.php");
 require_once(DB_DIR 		. "facebook.php");
 require_once(DB_DIR 		. "twitter.php");
 require_once(DB_DIR 		. "google.php");
-require_once(DB_DIR 		. "clicks.php");
 
 
 /**
@@ -53,6 +54,12 @@ class cpanel implements IController {
 					redirect();	
 				}
 				
+				//Check if clicks value is smaller than 1
+				if ($_POST['facebook_clicks'] < 1) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
 				//Check if clicks value is bigger than 100
 				if ($_POST['facebook_clicks'] > 100) {
 					flash_error('Do not cheat! ;)');
@@ -65,8 +72,10 @@ class cpanel implements IController {
 					redirect();	
 				}
 				
-				//Check if points per click value is bigger than 10
-				if ($_POST['facebook_points_per_click'] > 10) {
+				$level = dbLevels::get($user->get_user_level());
+				
+				//Check if points per click value is bigger than user's maximum points per click
+				if ($_POST['facebook_points_per_click'] > $level['level_points_per_click']) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}
@@ -133,6 +142,7 @@ class cpanel implements IController {
 			$data					= array();
 			$data['facebook_id'] 	= $page['facebook_id'];
 			$data['user_id']		= $user->get_user_id();
+			$data['click_type']		= 'clicked';
 			$data['click_date']		= time();
 			dbClicks::create($data);
 			
@@ -165,6 +175,12 @@ class cpanel implements IController {
 					redirect();	
 				}
 				
+				//Check if clicks value is smaller than 1
+				if ($_POST['twitter_clicks'] < 1) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
 				//Check if clicks value is bigger than 100
 				if ($_POST['twitter_clicks'] > 100) {
 					flash_error('Do not cheat! ;)');
@@ -177,8 +193,10 @@ class cpanel implements IController {
 					redirect();	
 				}
 				
-				//Check if points per click value is bigger than 10
-				if ($_POST['twitter_points_per_click'] > 10) {
+				$level = dbLevels::get($user->get_user_level());
+				
+				//Check if points per click value is bigger than user's level points per click
+				if ($_POST['twitter_points_per_click'] > $level['level_points_per_click']) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}
@@ -247,6 +265,7 @@ class cpanel implements IController {
 			$data					= array();
 			$data['twitter_id'] 	= $page['twitter_id'];
 			$data['user_id']		= $user->get_user_id();
+			$data['click_type']		= 'clicked';
 			$data['click_date']		= time();
 			dbClicks::create($data);
 			
@@ -279,6 +298,12 @@ class cpanel implements IController {
 					redirect();	
 				}
 				
+				//Check if clicks value is smaller than 1
+				if ($_POST['google_clicks'] < 1) {
+					flash_error('Do not cheat! ;)');
+					redirect();	
+				}
+				
 				//Check if clicks value is bigger than 100
 				if ($_POST['google_clicks'] > 100) {
 					flash_error('Do not cheat! ;)');
@@ -291,8 +316,10 @@ class cpanel implements IController {
 					redirect();	
 				}
 				
-				//Check if points per click value is bigger than 10
-				if ($_POST['google_points_per_click'] > 10) {
+				$level = dbLevels::get($user->get_user_level());
+				
+				//Check if points per click value is bigger than user's points per click
+				if ($_POST['google_points_per_click'] > $level['level_points_per_click']) {
 					flash_error('Do not cheat! ;)');
 					redirect();	
 				}

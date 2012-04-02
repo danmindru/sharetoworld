@@ -32,7 +32,7 @@
 {include file="register.tpl"}
 {include file="login.tpl"}
 
-<div class="container-fluid">
+<div class="container-fluid footer-min">
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">

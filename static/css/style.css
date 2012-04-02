@@ -577,6 +577,9 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 	width:670px;
 	margin:0 auto;
 }
+.donate-form{
+	height:36px;	
+}
 
 // Media Query Start - SKIP
 // Place at the end of the file
@@ -958,6 +961,14 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 	}
 	
 	@media only screen and (min-width: 1501px) and (max-width:2000px){
+	.footer-min{
+	min-height:740px;
+	}
+	
+	.donate-form{
+	height: 36px; 
+	width:300px;
+    }
 	
 	#arrow-twitter-points{
 	position:absolute;
@@ -972,28 +983,6 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 	}
 	// add facebook arrows 
 	
-	#arrow-facebook-points{
-	
 	}
-
-	
-	#arrow-facebook-tabs{
-	
-	}
-	
-	#arrow-facebook-help{
-
-	}
-	
-	#arrow-facebook-credits{
-	
-	}
-	
-	#arrow-facebook-donate{
-	
-	}
-	
-	}
-	
 	
 // Media Query END

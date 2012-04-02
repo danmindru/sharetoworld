@@ -483,6 +483,12 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 	width: 495px;
 	margin: 0 auto;
 }
+
+.social-pages-container {
+	width: 630px;
+	margin: 0 auto;
+}
+
 #facebook-instructions-container{
 	width: 495px;
 	margin: 0px auto;
@@ -579,6 +585,19 @@ box-shadow:         0px 3px 11px rgba(50, 50, 50, 0.35);
 }
 .donate-form{
 	height:36px;	
+}
+.ui-accordion-content{
+	height:320px;
+}
+.input-prepend .add-on, .input-append .add-on {
+	color:#333;
+}
+.ui-state-active {
+	border-color:#A6C9E2;
+}
+
+.footer-min-height{
+	min-height:600px;
 }
 
 // Media Query Start - SKIP

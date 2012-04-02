@@ -15,7 +15,7 @@
 					{else}
 						<li><a href="#" id="opener">Add New Page +</a></li>
 						<li><a href="{$URL}networks/facebook/">Get Points</a></li>
-						<li><a href="#">Your Pages</a></li>
+						<li><a href="{$URL}pages">Your Pages</a></li>
 						<li><a href="#">Statistics</a></li>
 					{/if}
 				</ul>

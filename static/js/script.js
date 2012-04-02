@@ -1,5 +1,9 @@
 jQuery(document).ready(function($) {
-
+	$( "#accordion" ).accordion({
+			collapsible: true
+		});
+	
+	
 	// increase the default animation speed to exaggerate the effect
 	$.fx.speeds._default = 1000;
 	

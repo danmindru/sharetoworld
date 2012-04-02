@@ -1,6 +1,7 @@
 {include file="header.tpl"}
 <script type="text/javascript" charset="utf-8">
 {literal}
+	var page = 0;
 	window.twttr = (function (d,s,id) {
 		var t, js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
@@ -23,10 +24,35 @@
 			$( "#user-credits" ).fadeIn(2000).text(total);
 			$('[id="divid' + myOptions[0] + '"]').addClass("hidden-div");
 			$.get( "{/literal}{$URL}cpanel/twitterFollow/{literal}", { ref: myOptions[0] } );
+			
+			//Increase likes count
+			page++;
+			if(page == 6) {
+				//reload template
+				window.location.replace("{/literal}{$URL}networks/twitter/{literal}");
+			}
 		});
 	});
 {/literal}
 </script>
+
+<script> 
+	{literal}
+		jQuery(document).ready(function($) {
+			$(".icon-remove").click(function() {
+				$('[id="divid' + $(this).attr("id") + '"]').addClass("hidden-div");
+				
+				//Increase likes count
+				page++;
+				if(page == 6) {
+					//reload template
+					window.location.replace("{/literal}{$URL}networks/twitter/{literal}");
+				}
+			});
+		});
+	{/literal}
+</script>
+
 {include file="navbar.tpl"}
 {include file="addNewPage.tpl"}
 {include file="register.tpl"}
@@ -52,7 +78,8 @@
 				
 				<div class="social-buttons-container twitter-container">
 					{foreach from=$twitter key=k item=page}
-						<div id="divid{$page.twitter_id}" class="fb-container" style="margin-bottom: 20px;">
+						<div id="divid{$page.twitter_id}" class="fb-container" style="position: relative; margin-bottom: 20px;">
+							<i id="{$page.twitter_id}" class="icon-remove" style="position: absolute; top: 3px; right: 3px; z-index: 10; cursor: pointer;"></i>
 							<div id="{$page.twitter_id}/{$page.twitter_points_per_follow}" style="margin-left: 10px; margin-top: 10px;">
 								<a href="{$page.twitter_url}" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow</a>
 							</div><br />

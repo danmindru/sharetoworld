@@ -189,6 +189,7 @@ class account implements IController {
 				$data['user_name'] 					= $_POST['user_name'];
 				$data['user_password'] 				= $password;
 				$data['user_email'] 				= $_POST['email'];
+				$data['level_id'] 					= 1; //Noob - first rank
 				$data['user_country'] 				= $_POST['country'];
 				$data['user_confirmation_code'] 	= md5(time()) . '' .rand(0,666) . '';
 				$data['user_register_ip'] 			= get_user_ip();
@@ -391,6 +392,10 @@ class account implements IController {
 			$result = $view->fetch('account/profile.tpl');
 			$front->setBody($result);
 		}
+	}
+
+	public static function updateLevel($newLevel) {
+		
 	}
 }
 

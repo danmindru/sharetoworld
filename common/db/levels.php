@@ -3,6 +3,20 @@
 class dbLevels {
 	
 	/**
+	 * Get levels list
+	 * 
+	 * @return array
+	 */
+	public static function get_list () {
+		$db = db::get_instance();
+		
+		$query = "SELECT * FROM levels
+				  ORDER BY level_id ASC";
+		
+		return $db->db_fetch_all($query);
+	}
+	
+	/**
 	 * Create new level
 	 * @param array $data
 	 * 

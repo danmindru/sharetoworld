@@ -30,6 +30,25 @@ class dbClicks {
 		return $db->db_fetch_all($query);
 	}
 	
+	
+	/**
+	 * Get the number of 'clicked' clicks by user_id
+	 * @param int $user_id
+	 * 
+	 * @return array 
+	 */
+	public static function count_clicks ($user_id) {
+		$db = db::get_instance();
+		
+		$query = sprintf("SELECT * FROM users_clicks
+						  WHERE user_id = '%s' AND click_type='clicked'",
+						  $db->db_escape($user_id));
+		
+		$result = $db->db_query($query);
+
+		return $db->db_num_rows($result);
+	}
+	
 	/**
 	 * Check if a Facebook Click exists
 	 * @param string $facebook_id

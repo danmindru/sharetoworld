@@ -64,9 +64,7 @@ class dbFacebook {
 	 * 
 	 * @return array
 	 */
-	public static function get_all_for_user ($user_id) {
-		$db = db::get_instance();
-		
+	public static function get_all_for_user ($user_id) {		
 		$db = db::get_instance();
 		
 		$query = sprintf("	SELECT * 
@@ -77,7 +75,7 @@ class dbFacebook {
 								WHERE users_clicks.user_id = '%s') 	
 							AND facebook_status != 'disabled' ORDER BY facebook_points_per_click DESC LIMIT 6",
 						$db->db_escape($user_id));	
-		//LEFT JOIN users_clicks ON facebook_api.facebook_id = users_clicks.facebook_id wHERE users_clicks.users_id != '%s'
+		
 		return $db->db_fetch_all($query);
 	}
 	

@@ -1,7 +1,15 @@
 {include file="header.tpl"}
 <script type="text/javascript" charset="utf-8">
 {literal}
-	var page = 0;
+	var page 		= 0;
+	var userPage	= {/literal}{$count}{literal};
+	
+	if(userPage < 6) {
+		var limit = userPage;
+	} else {
+		var limit = 6;
+	}
+
 	window.twttr = (function (d,s,id) {
 		var t, js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
@@ -27,9 +35,9 @@
 			
 			//Increase likes count
 			page++;
-			if(page == 6) {
+			if(page == limit) {
 				//reload template
-				window.location.replace("{/literal}{$URL}networks/twitter/{literal}");
+				setTimeout('window.location.href="{/literal}{$URL}networks/twitter/{literal}"', 1000);
 			}
 		});
 	});
@@ -42,11 +50,13 @@
 			$(".icon-remove").click(function() {
 				$('[id="divid' + $(this).attr("id") + '"]').addClass("hidden-div");
 				
+				$.get( "{/literal}{$URL}cpanel/twitterClose/{literal}", { ref: $(this).attr("id") } );
+				
 				//Increase likes count
 				page++;
-				if(page == 6) {
+				if(page == limit) {
 					//reload template
-					window.location.replace("{/literal}{$URL}networks/twitter/{literal}");
+					setTimeout('window.location.href="{/literal}{$URL}networks/twitter/{literal}"', 1000);
 				}
 			});
 		});
@@ -77,16 +87,20 @@
 				{include file="socialtabs.tpl"}
 				
 				<div class="social-buttons-container twitter-container">
-					{foreach from=$twitter key=k item=page}
-						<div id="divid{$page.twitter_id}" class="fb-container" style="position: relative; margin-bottom: 20px;">
-							<i id="{$page.twitter_id}" class="icon-remove" style="position: absolute; top: 3px; right: 3px; z-index: 10; cursor: pointer;"></i>
-							<div id="{$page.twitter_id}/{$page.twitter_points_per_follow}" style="margin-left: 10px; margin-top: 10px;">
-								<a href="{$page.twitter_url}" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow</a>
-							</div><br />
-							<a href="#" class="btn btn-success no-border-radius fb-page-credits">{$page.twitter_points_per_follow} Credits</a><br />
-							<a href="{$page.twitter_url}" class="btn btn-info no-border-radius fb-page-credits">View Profile</a>
-						</div>
-					{/foreach}
+					{if $message != ""}
+						<h1>{$message}</h1>
+					{else}
+						{foreach from=$twitter key=k item=page}
+							<div id="divid{$page.twitter_id}" class="fb-container" style="position: relative; margin-bottom: 20px;">
+								<i id="{$page.twitter_id}" class="icon-remove" style="position: absolute; top: 3px; right: 3px; z-index: 10; cursor: pointer;"></i>
+								<div id="{$page.twitter_id}/{$page.twitter_points_per_follow}" style="margin-left: 10px; margin-top: 10px;">
+									<a href="{$page.twitter_url}" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow</a>
+								</div><br />
+								<a href="#" class="btn btn-success no-border-radius fb-page-credits">{$page.twitter_points_per_follow} Credits</a><br />
+								<a href="{$page.twitter_url}" class="btn btn-info no-border-radius fb-page-credits">View Profile</a>
+							</div>
+						{/foreach}
+					{/if}
 				</div>
             
             	{php}

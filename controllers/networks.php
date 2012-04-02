@@ -37,9 +37,18 @@ class networks implements IController {
 		$user->confirmed_required();	
 		
 		$pages 	= dbFacebook::get_all_for_user($user->get_user_id());
+		$count	= count($pages);
+		
+		if($count == 0) {
+			$message = "There are no more links for now. Please check other social networks.";
+		} else {
+			$message = "";
+		}
 		
 		$view  	= new View();
 		$view	->assign('facebook', $pages);
+		$view	->assign('count', 	 $count);
+		$view	->assign('message',  $message);		
 		$result = $view->fetch('networks/facebook.tpl');
 		$front->setBody($result);
 	}
@@ -52,9 +61,18 @@ class networks implements IController {
 		$user->confirmed_required();
 		
 		$pages 	= dbTwitter::get_all_for_user($user->get_user_id());
+		$count	= count($pages);
 		
+		if($count == 0) {
+			$message = "There are no more links for now. Please check other social networks.";
+		} else {
+			$message = "";
+		}
+			
 		$view  	= new View();
 		$view	->assign('twitter', $pages);
+		$view	->assign('count', 	 $count);
+		$view	->assign('message',  $message);
 		$result = $view->fetch('networks/twitter.tpl');
 		$front->setBody($result);
 	}

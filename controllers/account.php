@@ -6,6 +6,8 @@ require_once(FUNCTIONS_DIR 	. 'email.php');
 require_once(COMMON_DIR 	. "class-phpass.php");
 require_once(DB_DIR 		. "sessions.php");
 require_once(DB_DIR 		. "users.php");
+require_once(DB_DIR 		. "levels.php");
+require_once(DB_DIR 		. "clicks.php");
 
 /**
  * Time after that new recovery request is permited
@@ -394,8 +396,24 @@ class account implements IController {
 		}
 	}
 
-	public static function updateLevel($newLevel) {
+	public static function updateLevel() {
+		$user	= User::get_instance();
+
+		$clicks = dbClicks::count_clicks($user->get_user_id());
 		
+		$levels	= dbLevels::get_list();
+		
+		foreach ($levels as $index => $level) {
+			$key = $index+1;
+			
+			if($key == 10) { $key = 9; }
+			
+			if($clicks > $level['level_required_clicks'] && $clicks < $levels[$key]['level_required_clicks']) {
+				$data 				= array();
+				$data['level_id'] 	= $level['level_id']; 
+				dbUsers::update($user->get_user_id(), $data);
+			}			
+		}
 	}
 }
 

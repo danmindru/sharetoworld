@@ -3,7 +3,15 @@
 <div id="fb-root"></div>
 <script>
 {literal}
-	var page = 0;
+	var page 		= 0;
+	var userPage	= {/literal}{$count}{literal};
+	
+	if(userPage < 6) {
+		var limit = userPage;
+	} else {
+		var limit = 6;
+	}
+	
 	window.fbAsyncInit = function() {
 		FB.init({
 			appId  : '117660814934034',
@@ -25,10 +33,9 @@
 			
 			//Increase likes count
 			page++;
-			console.log(page);
-			if(page == 6) {
+			if(page == limit) {
 				//reload template
-				window.location.replace("{/literal}{$URL}networks/facebook/{literal}");
+				setTimeout('window.location.href="{/literal}{$URL}networks/facebook/{literal}"', 1000);
 			}
     	});
 	};
@@ -51,12 +58,14 @@
 			$(".icon-remove").click(function() {
 				$('[id="fbpage' + $(this).attr("id") + '"]').remove();
 				
+				$.get( "{/literal}{$URL}cpanel/facebookClose/{literal}", { ref: $(this).attr("id") } );
+				
 				//Increase likes count
 				page++;
-				console.log(page);
-				if(page == 6) {
+				if(page == limit) {
+					
 					//reload template
-					window.location.replace("{/literal}{$URL}networks/facebook/{literal}");
+					setTimeout('window.location.href="{/literal}{$URL}networks/facebook/{literal}"', 1000);
 				}
 			});
 		});
@@ -86,14 +95,18 @@
 				{include file="socialtabs.tpl"}
 				
 				<div class="social-buttons-container twitter-container">
-					{foreach from=$facebook key=k item=page}
-						<div class="fb-container" style="position: relative; margin-bottom: 20px;" id="fbpage{$page.facebook_id}">
-							<i id="{$page.facebook_id}" class="icon-remove" style="position: absolute; top: 5px; right: 5px; z-index: 10; cursor: pointer;"></i>
-							<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="50" data-ref="{$page.facebook_id}/{$page.facebook_points_per_click}" data-show-faces="false" style="padding-left: 30px; overflow:hidden;"></div><br />
-							<a href="#" class="btn btn-success no-border-radius fb-page-credits">{$page.facebook_points_per_click} Credits</a><br />
-							<a href="{$page.facebook_url}" target="_blank" class="btn btn-info no-border-radius fb-page-credits">View Page</a>
-						</div>
-					{/foreach}
+					{if $message != ""}
+						<h1>{$message}</h1>
+					{else}
+						{foreach from=$facebook key=k item=page}
+							<div class="fb-container" style="position: relative; margin-bottom: 20px;" id="fbpage{$page.facebook_id}">
+								<i id="{$page.facebook_id}" class="icon-remove" style="position: absolute; top: 5px; right: 5px; z-index: 10; cursor: pointer;"></i>
+								<div class="fb-like facebook-like-button-network" data-href="{$page.facebook_url}" data-send="false" data-layout="box_count" data-width="50" data-ref="{$page.facebook_id}/{$page.facebook_points_per_click}" data-show-faces="false" style="padding-left: 30px; overflow:hidden;"></div><br />
+								<a href="#" class="btn btn-success no-border-radius fb-page-credits">{$page.facebook_points_per_click} Credits</a><br />
+								<a href="{$page.facebook_url}" target="_blank" class="btn btn-info no-border-radius fb-page-credits">View Page</a>
+							</div>
+						{/foreach}
+					{/if}
 				</div>
 				
 				{php}

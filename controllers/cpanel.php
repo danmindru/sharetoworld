@@ -1,14 +1,14 @@
 <?php
 
-require_once(FUNCTIONS_DIR 	. 'validate.php');
-require_once(DB_DIR 		. "sessions.php");
-require_once(DB_DIR 		. "users.php");
-require_once(DB_DIR 		. "levels.php");
-require_once(DB_DIR 		. "clicks.php");
-require_once(DB_DIR 		. "facebook.php");
-require_once(DB_DIR 		. "twitter.php");
-require_once(DB_DIR 		. "google.php");
-
+require_once(FUNCTIONS_DIR 		. "validate.php");
+require_once(DB_DIR 			. "sessions.php");
+require_once(DB_DIR 			. "users.php");
+require_once(DB_DIR 			. "levels.php");
+require_once(DB_DIR 			. "clicks.php");
+require_once(DB_DIR 			. "facebook.php");
+require_once(DB_DIR 			. "twitter.php");
+require_once(DB_DIR 			. "google.php");
+require_once(CONTROLLERS_DIR 	. "account.php");
 
 /**
  * Home page controller class
@@ -119,7 +119,6 @@ class cpanel implements IController {
 
 	public function facebookLike() {
 		$user	= User::get_instance();
-		$user   = User::get_instance();	
 		
 		$user->loggedin_required();
 		$user->confirmed_required();
@@ -150,6 +149,31 @@ class cpanel implements IController {
 			$data					= array();
 			$data['user_credits']	= $user->get_user_credits() + $page['facebook_points_per_click'];
 			dbUsers::update($user->get_user_id(), $data);
+			
+			//Check if it required to update user's level
+			account::updateLevel();
+		}
+	}
+
+	public function facebookClose() {
+		$user	= User::get_instance();
+		
+		$user->loggedin_required();
+		
+		//Get the closed page
+		$page 	= dbFacebook::get_by_id($_GET['ref']); 
+		
+		if(!dbClicks::exists($page['facebook_id'], $user->get_user_id())) {
+			//Create user click
+			$data					= array();
+			$data['facebook_id'] 	= $page['facebook_id'];
+			$data['user_id']		= $user->get_user_id();
+			$data['click_type']		= 'closed';
+			$data['click_date']		= time();
+			dbClicks::create($data);
+			
+			//Check if it required to update user's level
+			account::updateLevel();
 		}
 	}
 
@@ -244,9 +268,6 @@ class cpanel implements IController {
 		$user->loggedin_required();
 		$user->confirmed_required();
 		
-		//Check if user is loggein
-		$user->loggedin_required();
-		
 		//Get the liked page
 		$page 	= dbTwitter::get_by_id($_GET['ref']); 
 		
@@ -273,6 +294,32 @@ class cpanel implements IController {
 			$data					= array();
 			$data['user_credits']	= $user->get_user_credits() + $page['twitter_points_per_follow'];
 			dbUsers::update($user->get_user_id(), $data);
+			
+			//Check if it required to update user's level
+			account::updateLevel();
+		}
+	}
+
+	public function twitterClose() {
+		$user   = User::get_instance();	
+		
+		$user->loggedin_required();
+		$user->confirmed_required();
+		
+		//Get the liked page
+		$page 	= dbTwitter::get_by_id($_GET['ref']); 
+		
+		if(!dbClicks::twitter_exists($page['twitter_id'], $user->get_user_id())) {
+			//Create user click
+			$data					= array();
+			$data['twitter_id'] 	= $page['twitter_id'];
+			$data['user_id']		= $user->get_user_id();
+			$data['click_type']		= 'closed';
+			$data['click_date']		= time();
+			dbClicks::create($data);
+			
+			//Check if it required to update user's level
+			account::updateLevel();
 		}
 	}
 
@@ -354,7 +401,6 @@ class cpanel implements IController {
 				redirect();
 				
 			} catch (Exception $e) {
-				echo "eror";die;
 				//Flash error message if an error eccured
 				flash_error($e->getMessage());
 				redirect();
